@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カード一覧｜プロフィールカード（デモ）</title>
+<meta name="description" content="プロフィールカード（デモ）の公開カード一覧。掲載者・数値はすべて架空で、写真はAI生成画像です。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo-banner">デモサイトです。掲載者・店舗・数値はすべて架空で、外部リンクはすべてダミーです。</div>
+<div class="wrap">
+  <header class="site">
+    <div class="logo">カード一覧<span>デモ</span></div>
+    <p class="tagline">公開プロフィールページの一覧（カードが情報の本体です）</p>
+  </header>
+
+  <nav class="menu">
+    <a href="index.html">カードサイト入口</a>
+    <a href="cards.html" class="on">カード一覧</a>
+    <a href="dashboard.html">ダッシュボード（例）</a>
+    <a href="edit.html">編集ページ（例）</a>
+  </nav>
+
+  <p class="sec-note" style="margin-top:14px">セラピストのカードが中心です。カード自体は職種を選べる汎用基盤で、健全ジャンル（ネイリスト等）のカードも作れます。下の「なな」（ネイリスト）はカードサイト内だけの表示例で、掲示板には載せていません。セラピストのカードのURLは、おすすめURL掲示板にそのまま表示されます。</p>
+
+  <main class="grid" id="list">
+    <a class="p-card" href="card/2.html" data-id="2" data-updated="130" data-open="1" data-hay="みゆ 新宿 リンパ ヘッドスパ メゾンロゼ新宿（架空）">
+      <span class="ph"><img src="images/p2-a.jpg" alt="みゆの写真（AI生成）" data-name="みゆ" data-color="#7a9e7e" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">みゆ <span class="age">24歳</span></span><br>
+      <span class="area">📍新宿</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>リンパ</span><span>ヘッドスパ</span></span>
+      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 86</span><span class="upd-time">更新：2時間前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/6.html" data-id="6" data-updated="75" data-open="1" data-hay="ゆき 恵比寿 オイル 夜型 フェイシャル サロン・ルーチェ恵比寿（架空）">
+      <span class="ph"><img src="images/p6-a.jpg" alt="ゆきの写真（AI生成）" data-name="ゆき" data-color="#4a7a8c" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">ゆき <span class="age">25歳</span></span><br>
+      <span class="area">📍恵比寿</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>オイル</span><span>夜型</span><span>フェイシャル</span></span>
+      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 167</span><span class="upd-time">更新：1時間前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/4.html" data-id="4" data-updated="1500" data-open="1" data-hay="あかり 池袋 アロマ ホットストーン メゾンクレール池袋（架空）">
+      <span class="ph"><img src="images/p4-a.jpg" alt="あかりの写真（AI生成）" data-name="あかり" data-color="#a65b8f" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">あかり <span class="age">23歳</span></span><br>
+      <span class="area">📍池袋</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>アロマ</span><span>ホットストーン</span></span>
+      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 57</span><span class="upd-time">更新：1日前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/1.html" data-id="1" data-updated="40" data-open="1" data-hay="りお 銀座 アロマ オイル 深夜OK サロン・フィオーレ銀座（架空）">
+      <span class="ph"><img src="images/p1-a.jpg" alt="りおの写真（AI生成）" data-name="りお" data-color="#c96f4a" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">りお <span class="age">26歳</span></span><br>
+      <span class="area">📍銀座</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>アロマ</span><span>オイル</span><span>深夜OK</span></span>
+      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 128</span><span class="upd-time">更新：40分前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/3.html" data-id="3" data-updated="300" data-open="0" data-hay="さくら 六本木 整体 ストレッチ 指圧 サロン・セレッソ六本木（架空）">
+      <span class="ph"><img src="images/p3-a.jpg" alt="さくらの写真（AI生成）" data-name="さくら" data-color="#5b7fa6" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">さくら <span class="age">28歳</span></span><br>
+      <span class="area">📍六本木</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>整体</span><span>ストレッチ</span><span>指圧</span></span>
+      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 203</span><span class="upd-time">更新：5時間前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/5.html" data-id="5" data-updated="2900" data-open="0" data-hay="かえで 渋谷 リフレクソロジー 読書好き ミルフィーユ渋谷（架空）">
+      <span class="ph"><img src="images/p5-a.jpg" alt="かえでの写真（AI生成）" data-name="かえで" data-color="#8f6a3d" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">かえで <span class="age">27歳</span></span><br>
+      <span class="area">📍渋谷</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>リフレクソロジー</span><span>読書好き</span></span>
+      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐☆☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 41</span><span class="upd-time">更新：2日前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+    <a class="p-card" href="card/7.html" data-id="7" data-updated="180" data-open="0" data-hay="なな 表参道 ジェルネイル ニュアンス 手描きアート フリーネイリスト">
+      <span class="ph"><img src="images/p7-a.jpg" alt="ななの写真（AI生成）" data-name="なな" data-color="#b0526b" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">なな <span class="age">25歳</span></span><br>
+      <span class="area">📍表参道</span> <span class="job">職種：ネイリスト</span>
+      <span class="tags"><span>ジェルネイル</span><span>ニュアンス</span><span>手描きアート</span></span>
+      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 63</span><span class="upd-time">更新：3時間前</span></span>
+      <span class="detail-link">公開プロフィールを見る →</span>
+      </span></a>
+  </main>
+
+  <footer class="site">
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a></nav>
+    各カードは本人の公開プロフィールページです。連絡・予約・決済は各リンク先（本人のページ）で行われます。<br>
+    写真はAI生成画像を使用しています（各写真に「AI生成」表記）。掲載者・店舗はすべて架空のデモデータです。
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+// ダッシュボード連動（端末内保存）：営業中バッジと更新時刻へ反映
+document.querySelectorAll('.p-card').forEach(function (el) {
+  var st = getCardState(+el.dataset.id);
+  if (!st) return;
+  var open = el.dataset.open === '1';
+  if (typeof st.open === 'boolean') open = st.open;
+  var badge = el.querySelector('[data-open-badge]');
+  if (badge) badge.style.display = open ? '' : 'none';
+  if (st.updatedAt) {
+    var m = Math.max(0, Math.round((Date.now() - st.updatedAt) / 60000));
+    var upd = el.querySelector('.upd-time');
+    if (upd) upd.textContent = '更新：' + relTime(m);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カード編集ページ（例）｜プロフィールカード（デモ）</title>
+<meta name="description" content="プロフィールカード（デモ）の編集ページの見本。職種の選択、写真URL・外部リンクURLの貼り付け、本日営業中スイッチ、更新ボタン。入力は保存されません。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo-banner">デモサイトです。これは編集ページの見本で、入力内容は保存されません（架空データ）。</div>
+<div class="wrap">
+  <header class="site">
+    <div class="logo">カード編集<span>例</span></div>
+    <p class="tagline">「りお」さんのカードを編集中（デモ）</p>
+  </header>
+
+  <nav class="menu">
+    <a href="index.html">カードサイト入口</a>
+    <a href="cards.html">カード一覧</a>
+    <a href="dashboard.html">ダッシュボード（例）</a>
+    <a href="edit.html" class="on">編集ページ（例）</a>
+  </nav>
+
+  <div class="owner-banner">これは掲載者本人向けの編集ページの見本です（デモ）</div>
+
+  <section class="block"><h2>基本情報（選択式）</h2>
+    <div class="field"><label>職種（選択）</label>
+      <select id="f-job">
+        <option selected>セラピスト</option>
+        <option>ネイリスト</option>
+        <option>ゴルフ同行</option>
+        <option>エステティシャン</option>
+        <option>モデル</option>
+        <option>その他</option>
+      </select>
+      <p class="hint">カードは職種を選べる汎用基盤です。職種によって、載る掲示板が変わります。</p>
+    </div>
+    <div class="field"><label>表示名</label><input type="text" value="りお"></div>
+    <div class="field"><label>エリア（選択）</label>
+      <select id="f-area">
+        <option selected>銀座</option><option>新宿</option><option>六本木</option>
+        <option>池袋</option><option>渋谷</option><option>恵比寿</option><option>その他</option>
+      </select>
+    </div>
+    <div class="field"><label>おすすめ度 ⭐︎（自己申告）</label>
+      <select id="f-stars">
+        <option>⭐⭐⭐☆☆</option><option>⭐⭐⭐⭐☆</option><option selected>⭐⭐⭐⭐⭐</option>
+      </select>
+      <p class="hint">⭐︎は本人のおすすめ申告です。利用者の評価ではなく、並び順にも使われません。</p>
+    </div>
+  </section>
+
+  <section class="block"><h2>写真（URLを貼る）</h2>
+    <div class="field"><label>写真1のURL</label><input type="url" value="https://watengu.github.io/profile-card-demo/images/p1-a.jpg"><p class="hint">写真そのものはカード側に置かず、URLで参照します（デモではこのサイト内の画像URL）。</p></div>
+    <div class="field"><label>写真2のURL</label><input type="url" value="https://watengu.github.io/profile-card-demo/images/p1-b.jpg"></div>
+  </section>
+
+  <section class="block"><h2>外部リンク（URLを貼る）</h2>
+    <div class="field"><label>公式プロフィールのURL</label><input type="url" value="" placeholder="https://…（自分のページのURL）"></div>
+    <div class="field"><label>写メ日記のURL</label><input type="url" value="" placeholder="https://…"></div>
+    <div class="field"><label>SNSのURL</label><input type="url" value="" placeholder="https://…"></div>
+    <div class="field"><label>所属店舗ページのURL</label><input type="url" value="" placeholder="https://…"></div>
+    <p class="form-note">文章は書きません。並べるのは、自分のページへのURLだけです。連絡・予約・決済は、すべてリンク先のページで行われます。</p>
+  </section>
+
+  <section class="block"><h2>カードの状態</h2>
+    <label class="switch-row"><span>本日営業中（掲載者申告）</span><span class="switch"><input type="checkbox" id="open-toggle"><span class="slider"></span></span></label>
+    <button class="btn primary" id="update-btn" style="width:100%;margin-top:12px">更新しました</button>
+    <p class="state-now" id="state-now"></p>
+    <p class="form-note">このスイッチと更新ボタンだけは、デモ用の端末内連動の対象です。操作すると、公開カード・カード一覧・掲示板サイトの「りお」カードに反映されます（両サイトが同一ドメインのデモのため）。それ以外の入力は保存されません。</p>
+  </section>
+
+  <button class="btn primary" id="save-btn" style="width:100%;margin-top:14px">保存する（デモ：保存されません）</button>
+  <p style="margin-top:12px;font-size:14px">公開ページ：<a href="card/1.html" style="color:var(--accent)">りお のプロフィールカードを見る →</a> ／ <a href="dashboard.html" style="color:var(--accent)">数字を見る（ダッシュボード例）→</a></p>
+
+  <footer class="site">
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a></nav>
+    編集ページの見本です。入力内容は保存されません。掲載者・店舗・数値はすべて架空のデモデータです。
+  </footer>
+</div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+<script>
+var tgt = PEOPLE.find(function (x) { return x.id === ANALYTICS.personId; });
+var cstate = getCardState(tgt.id) || {};
+var toggle = document.getElementById('open-toggle');
+var nowEl = document.getElementById('state-now');
+function curOpen() { return typeof cstate.open === 'boolean' ? cstate.open : tgt.openToday; }
+function paintState() {
+  toggle.checked = curOpen();
+  var upd = cstate.updatedAt
+    ? 'たった今（' + relTime(Math.max(0, Math.round((Date.now() - cstate.updatedAt) / 60000))) + '・端末内保存）'
+    : tgt.updatedLabel;
+  nowEl.textContent = '現在の状態：本日営業中 ' + (curOpen() ? 'ON' : 'OFF') + '／最終更新：' + upd;
+}
+toggle.addEventListener('change', function () {
+  cstate.open = toggle.checked;
+  setStore('cardstate_' + tgt.id, cstate);
+  paintState();
+  toast(toggle.checked ? '「本日営業中」をONにしました（公開カードと掲示板に反映されます）' : '「本日営業中」をOFFにしました（公開カードと掲示板に反映されます）');
+});
+document.getElementById('update-btn').addEventListener('click', function () {
+  cstate.updatedAt = Date.now();
+  setStore('cardstate_' + tgt.id, cstate);
+  paintState();
+  toast('更新しました。公開カードと掲示板の鮮度の帯に反映されます');
+});
+document.getElementById('save-btn').addEventListener('click', function () {
+  toast('デモのため、入力内容は保存されません');
+});
+paintState();
+</script>
+</body>
+</html>
