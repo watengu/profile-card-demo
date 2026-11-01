@@ -43,7 +43,7 @@ function toast(msg) {
 }
 
 // ---------- 画像フォールバック（イニシャル＋色プレースホルダ） ----------
-var PH_COLORS = {1: "#c96f4a", 2: "#7a9e7e", 3: "#5b7fa6", 4: "#a65b8f", 5: "#8f6a3d", 6: "#4a7a8c"};
+var PH_COLORS = {1: "#c96f4a", 2: "#7a9e7e", 3: "#5b7fa6", 4: "#a65b8f", 5: "#8f6a3d", 6: "#4a7a8c", 7: "#b0526b"};
 function phColor(id) { return PH_COLORS[id] || "#999"; }
 function imgFallback(img) {
   if (!img || img.dataset.fbDone) return;
