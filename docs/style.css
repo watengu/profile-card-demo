@@ -299,3 +299,13 @@ details.diary-more summary {
   margin-top: 12px; font-size: 12px; color: var(--sub); background: var(--bg);
   border: 1px dashed var(--line); border-radius: 10px; padding: 10px 12px;
 }
+
+/* LINE入口（プレビュー：アカウント未開設・リンク未設定） */
+.line-hero-btn{display:flex;align-items:center;gap:12px;background:#06c755;color:#fff;border-radius:999px;padding:16px 20px;margin:14px 0 8px;cursor:pointer}
+.line-hero-btn .line-mark{background:#fff;color:#06c755;font-weight:800;border-radius:8px;padding:4px 10px;font-size:15px}
+.line-hero-btn .line-main{font-size:19px;font-weight:800;line-height:1.2}
+.line-hero-btn .line-sub{font-size:12px;opacity:.92}
+.line-card{border:1px solid #e7ddd2;border-radius:14px;padding:16px;margin-top:14px;background:#fff}
+.line-checks{list-style:none;margin:0;padding:0;font-size:14px;line-height:2}
+.line-checks li::before{content:"✓ ";color:#06c755;font-weight:800}
+.line-add-btn{display:block;text-align:center;background:#06c755;color:#fff;font-weight:800;border-radius:999px;padding:12px;margin-top:10px;cursor:pointer}

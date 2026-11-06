@@ -97,6 +97,29 @@
 
   <div class="pr-slot">PR　広告枠の表示例です（ダミー）</div>
 
+  <div class="lp-sec">
+    <h2>登録・相談は、公式LINEで</h2>
+    <div class="line-hero-btn" id="line-hero">
+      <span class="line-mark">LINE</span>
+      <span><span class="line-main">LINEで登録・相談する</span><br><span class="line-sub">カードの作り方・掲載の相談もこちら</span></span>
+    </div>
+    <p style="font-size:13px;color:var(--sub);text-align:center">登録や掲載の相談は、公式LINEがいちばん早くて確実です</p>
+    <div class="line-card">
+      <p style="font-weight:700;margin:0 0 8px">公式LINEで、もっと便利に</p>
+      <div style="position:relative;border-radius:12px;overflow:hidden">
+        <img src="images/p2-a.jpg" alt="セラピストのイメージ（AI生成）" style="width:100%;height:180px;object-fit:cover;display:block" data-name="イメージ" data-color="#999" onerror="imgFallback(this)">
+        <span class="ai-label">AI生成</span>
+      </div>
+      <ul class="line-checks" style="margin-top:10px">
+        <li>登録の手順を、そのまま案内します</li>
+        <li>作り方・直し方の相談ができます</li>
+        <li>公開後のお知らせも、LINEで届きます</li>
+      </ul>
+      <span class="line-add-btn" id="line-add">友だち追加する</span>
+      <p style="font-size:11px;color:var(--sub);margin-top:8px">※ LINE公式アカウントは開設準備中です。この入口はプレビュー表示で、開設後に有効になります。</p>
+    </div>
+  </div>
+
   <div class="lp-sec" style="text-align:center">
     <h2>あなたのURLも、1枚に。</h2>
     <div class="cta-row" style="justify-content:center">
@@ -120,5 +143,10 @@
   </footer>
 </div>
 <script src="app.js"></script>
+
+<script>
+document.getElementById('line-hero').addEventListener('click', function () { toast('LINE公式アカウントは開設準備中です（プレビュー）'); });
+document.getElementById('line-add').addEventListener('click', function () { toast('LINE公式アカウントは開設準備中です（プレビュー）'); });
+</script>
 </body>
 </html>
