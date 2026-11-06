@@ -31,7 +31,6 @@
       <span class="name">みゆ <span class="age">24歳</span></span><br>
       <span class="area">📍新宿</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>リンパ</span><span>ヘッドスパ</span></span>
-      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 86</span><span class="upd-time">更新：2時間前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -42,7 +41,6 @@
       <span class="name">ゆき <span class="age">25歳</span></span><br>
       <span class="area">📍恵比寿</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>オイル</span><span>夜型</span><span>フェイシャル</span></span>
-      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 167</span><span class="upd-time">更新：1時間前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -53,7 +51,6 @@
       <span class="name">あかり <span class="age">23歳</span></span><br>
       <span class="area">📍池袋</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>アロマ</span><span>ホットストーン</span></span>
-      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 57</span><span class="upd-time">更新：1日前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -64,7 +61,6 @@
       <span class="name">りお <span class="age">26歳</span></span><br>
       <span class="area">📍銀座</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>アロマ</span><span>オイル</span><span>深夜OK</span></span>
-      <span class="open-pill" data-open-badge>本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 128</span><span class="upd-time">更新：40分前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -75,7 +71,6 @@
       <span class="name">さくら <span class="age">28歳</span></span><br>
       <span class="area">📍六本木</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>整体</span><span>ストレッチ</span><span>指圧</span></span>
-      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 203</span><span class="upd-time">更新：5時間前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -86,7 +81,6 @@
       <span class="name">かえで <span class="age">27歳</span></span><br>
       <span class="area">📍渋谷</span> <span class="job">職種：セラピスト</span>
       <span class="tags"><span>リフレクソロジー</span><span>読書好き</span></span>
-      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐☆☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 41</span><span class="upd-time">更新：2日前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -97,7 +91,6 @@
       <span class="name">なな <span class="age">25歳</span></span><br>
       <span class="area">📍表参道</span> <span class="job">職種：ネイリスト</span>
       <span class="tags"><span>ジェルネイル</span><span>ニュアンス</span><span>手描きアート</span></span>
-      <span class="open-pill" data-open-badge style="display:none">本日営業中（掲載者申告）</span>
       <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
       <span class="meta"><span>♥ 63</span><span class="upd-time">更新：3時間前</span></span>
       <span class="detail-link">公開プロフィールを見る →</span>
@@ -119,14 +112,10 @@
 <script src="data.js"></script>
 <script src="app.js"></script>
 <script>
-// ダッシュボード連動（端末内保存）：営業中バッジと更新時刻へ反映
+// カード状態の連動（端末内保存）：更新時刻へ反映
 document.querySelectorAll('.p-card').forEach(function (el) {
   var st = getCardState(+el.dataset.id);
   if (!st) return;
-  var open = el.dataset.open === '1';
-  if (typeof st.open === 'boolean') open = st.open;
-  var badge = el.querySelector('[data-open-badge]');
-  if (badge) badge.style.display = open ? '' : 'none';
   if (st.updatedAt) {
     var m = Math.max(0, Math.round((Date.now() - st.updatedAt) / 60000));
     var upd = el.querySelector('.upd-time');

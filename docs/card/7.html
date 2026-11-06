@@ -19,7 +19,6 @@
     <header class="site" style="text-align:left">
       <div class="logo" style="font-size:20px">なな <span style="margin:0;font-size:13px;color:var(--sub)">25歳｜表参道</span></div>
       <p class="tagline" style="text-align:left">フリーネイリスト（レンタルサロン利用）｜<span class="update-note" id="upd-note">更新しました：本日 12:30 更新（3時間前）</span></p>
-      <p id="open-slot" style="margin-top:6px;display:none"><span class="open-badge" style="position:static">本日営業中（掲載者申告）</span></p>
     </header>
     <div class="photo-row">
       <span class="photo-cell"><img src="../images/p7-a.jpg" alt="ななの写真（AI生成）" data-name="なな" data-color="#b0526b" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
@@ -118,7 +117,6 @@ paintCounts();
 var cst = getCardState(PID);
 if (cst) {
   if (typeof cst.open === 'boolean') {
-    document.getElementById('open-slot').style.display = cst.open ? '' : 'none';
   }
   if (cst.updatedAt) {
     var m = Math.max(0, Math.round((Date.now() - cst.updatedAt) / 60000));

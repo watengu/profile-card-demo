@@ -31,8 +31,7 @@
   </section>
 
   <section class="block"><h2>カードの状態（デモ連動）</h2>
-    <p style="font-size:13px">この操作は端末内に保存され、ホームの「りお」カードの「本日営業中」バッジと更新時刻に反映されます（デモ用の疑似連動）。</p>
-    <label class="switch-row"><span>本日営業中（掲載者申告）</span><span class="switch"><input type="checkbox" id="open-toggle"><span class="slider"></span></span></label>
+    <p style="font-size:13px">この操作は端末内に保存され、ホームの「りお」カードの更新時刻に反映されます（デモ用の疑似連動）。</p>
     <button class="btn primary" id="update-btn" style="width:100%;margin-top:12px">更新しました</button>
     <p class="state-now" id="state-now"></p>
   </section>
@@ -62,7 +61,7 @@ document.getElementById('db').innerHTML =
     return '<tr><td>' + r.label + '</td><td>' + r.count + ' 回</td></tr>';
   }).join('') +
   '</table>' +
-  '<p style="font-size:12px;color:var(--sub);margin-top:10px">「外部ページへの移動」＝あなたの宣伝ページへ実際に移動した人数の目安です。更新ボタンや「本日営業中」を使うと、掲示板の鮮度の帯に載りやすくなります。</p></section>' +
+  '<p style="font-size:12px;color:var(--sub);margin-top:10px">「外部ページへの移動」＝あなたの宣伝ページへ実際に移動した人数の目安です。更新ボタンを使うと、掲示板の鮮度の帯に載りやすくなります。</p></section>' +
   '<section class="block"><h2>あなたのカード</h2>' +
   '<p style="font-size:14px"><a href="card/' + p.id + '.html" style="color:var(--accent)">' + p.name + ' のプロフィールカードを見る →</a>　<a href="edit.html" style="color:var(--accent)">カードを編集する（例）→</a></p>' +
   '<p style="font-size:12px;color:var(--sub);margin-top:6px">このカードURLを自分のSNSやプロフィールに貼ることが、そのまま宣伝になります。</p></section>';
@@ -71,23 +70,13 @@ document.getElementById('db').innerHTML =
 <script>
 var tgt = PEOPLE.find(function (x) { return x.id === ANALYTICS.personId; });
 var cstate = getCardState(tgt.id) || {};
-var toggle = document.getElementById('open-toggle');
 var nowEl = document.getElementById('state-now');
-function curOpen() { return typeof cstate.open === 'boolean' ? cstate.open : tgt.openToday; }
 function paintState() {
-  toggle.checked = curOpen();
   var upd = cstate.updatedAt
     ? 'たった今（' + relTime(Math.max(0, Math.round((Date.now() - cstate.updatedAt) / 60000))) + '・端末内保存）'
     : tgt.updatedLabel;
-  nowEl.textContent = '現在の状態：本日営業中 ' + (curOpen() ? 'ON' : 'OFF') + '／最終更新：' + upd;
+  nowEl.textContent = '現在の状態：最終更新：' + upd;
 }
-toggle.addEventListener('change', function () {
-  cstate = getCardState(tgt.id) || {};
-  cstate.open = toggle.checked;
-  setStore('cardstate_' + tgt.id, cstate);
-  paintState();
-  toast(toggle.checked ? '「本日営業中」をONにしました（カードと掲示板に反映されます）' : '「本日営業中」をOFFにしました（カードと掲示板に反映されます）');
-});
 document.getElementById('update-btn').addEventListener('click', function () {
   cstate = getCardState(tgt.id) || {};
   cstate.updatedAt = Date.now();

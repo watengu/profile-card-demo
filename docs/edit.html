@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>カード編集ページ（例）｜プロフィールカード（デモ）</title>
-<meta name="description" content="プロフィールカード（デモ）の編集ページの見本。職種の選択、写真URL・外部リンクURLの貼り付け、本日営業中スイッチ、更新ボタン。入力は保存されません。">
+<meta name="description" content="プロフィールカード（デモ）の編集ページの見本。職種の選択、写真URL・外部リンクURLの貼り付け、更新ボタン。">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,7 +77,6 @@
   </section>
 
   <section class="block"><h2>カードの状態</h2>
-    <label class="switch-row"><span>本日営業中（掲載者申告）</span><span class="switch"><input type="checkbox" id="open-toggle"><span class="slider"></span></span></label>
     <button class="btn primary" id="update-btn" style="width:100%;margin-top:12px">更新しました</button>
     <p class="state-now" id="state-now"></p>
     <p class="form-note">このスイッチと更新ボタンは即時に反映されます。「保存する」を押すと、上の入力（職種・表示名・エリア・おすすめ度・写真URL・リンクURL・対応エリア・対応メニュー）も端末内に保存され、公開カードに反映されます（デモ用の端末内連動）。</p>
@@ -96,23 +95,13 @@
 <script>
 var tgt = PEOPLE.find(function (x) { return x.id === ANALYTICS.personId; });
 var cstate = getCardState(tgt.id) || {};
-var toggle = document.getElementById('open-toggle');
 var nowEl = document.getElementById('state-now');
-function curOpen() { return typeof cstate.open === 'boolean' ? cstate.open : tgt.openToday; }
 function paintState() {
-  toggle.checked = curOpen();
   var upd = cstate.updatedAt
     ? 'たった今（' + relTime(Math.max(0, Math.round((Date.now() - cstate.updatedAt) / 60000))) + '・端末内保存）'
     : tgt.updatedLabel;
-  nowEl.textContent = '現在の状態：本日営業中 ' + (curOpen() ? 'ON' : 'OFF') + '／最終更新：' + upd;
+  nowEl.textContent = '現在の状態：最終更新：' + upd;
 }
-toggle.addEventListener('change', function () {
-  cstate = getCardState(tgt.id) || {};
-  cstate.open = toggle.checked;
-  setStore('cardstate_' + tgt.id, cstate);
-  paintState();
-  toast(toggle.checked ? '「本日営業中」をONにしました（公開カードと掲示板に反映されます）' : '「本日営業中」をOFFにしました（公開カードと掲示板に反映されます）');
-});
 document.getElementById('update-btn').addEventListener('click', function () {
   cstate = getCardState(tgt.id) || {};
   cstate.updatedAt = Date.now();

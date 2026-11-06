@@ -5,7 +5,7 @@ const PEOPLE = [
     tags: ["アロマ", "オイル", "深夜OK"],
     stars: 5, likes: 128, views: 2480,
     updatedMin: 40, updatedLabel: "本日 14:50 更新",
-    joinedDays: 21, openToday: true, mood: "🌿", streak: 5,
+    joinedDays: 21, mood: "🌿", streak: 5,
     shop: "サロン・フィオーレ銀座（架空）",
     height: "162cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -26,7 +26,7 @@ const PEOPLE = [
     tags: ["リンパ", "ヘッドスパ"],
     stars: 4, likes: 86, views: 1730,
     updatedMin: 130, updatedLabel: "本日 13:05 更新",
-    joinedDays: 3, openToday: true, mood: "☀️", streak: 3,
+    joinedDays: 3, mood: "☀️", streak: 3,
     shop: "メゾンロゼ新宿（架空）",
     height: "158cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -46,7 +46,7 @@ const PEOPLE = [
     tags: ["整体", "ストレッチ", "指圧"],
     stars: 5, likes: 203, views: 3120,
     updatedMin: 300, updatedLabel: "本日 10:20 更新",
-    joinedDays: 45, openToday: false, mood: "🍵", streak: 2,
+    joinedDays: 45, mood: "🍵", streak: 2,
     shop: "サロン・セレッソ六本木（架空）",
     height: "165cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -66,7 +66,7 @@ const PEOPLE = [
     tags: ["アロマ", "ホットストーン"],
     stars: 4, likes: 57, views: 980,
     updatedMin: 1500, updatedLabel: "昨日 21:40 更新",
-    joinedDays: 12, openToday: true, mood: "🌙", streak: 1,
+    joinedDays: 12, mood: "🌙", streak: 1,
     shop: "メゾンクレール池袋（架空）",
     height: "155cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -86,7 +86,7 @@ const PEOPLE = [
     tags: ["リフレクソロジー", "読書好き"],
     stars: 3, likes: 41, views: 760,
     updatedMin: 2900, updatedLabel: "10/30 18:15 更新",
-    joinedDays: 60, openToday: false, mood: "📚", streak: 0,
+    joinedDays: 60, mood: "📚", streak: 0,
     shop: "ミルフィーユ渋谷（架空）",
     height: "160cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -105,7 +105,7 @@ const PEOPLE = [
     tags: ["オイル", "夜型", "フェイシャル"],
     stars: 5, likes: 167, views: 2210,
     updatedMin: 75, updatedLabel: "本日 14:15 更新",
-    joinedDays: 7, openToday: true, mood: "✨", streak: 4,
+    joinedDays: 7, mood: "✨", streak: 4,
     shop: "サロン・ルーチェ恵比寿（架空）",
     height: "163cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
@@ -126,7 +126,7 @@ const PEOPLE = [
     tags: ["ジェルネイル", "ニュアンス", "手描きアート"],
     stars: 4, likes: 63, views: 890,
     updatedMin: 180, updatedLabel: "本日 12:30 更新",
-    joinedDays: 10, openToday: false, mood: "🎨", streak: 2,
+    joinedDays: 10, mood: "🎨", streak: 2,
     shop: "フリーネイリスト（レンタルサロン利用）",
     height: "—", job: "ネイリスト", work: "フリー（レンタルサロン利用）",
     links: [

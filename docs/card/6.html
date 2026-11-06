@@ -19,7 +19,6 @@
     <header class="site" style="text-align:left">
       <div class="logo" style="font-size:20px">ゆき <span style="margin:0;font-size:13px;color:var(--sub)">25歳｜恵比寿</span></div>
       <p class="tagline" style="text-align:left">サロン・ルーチェ恵比寿（架空）｜<span class="update-note" id="upd-note">更新しました：本日 14:15 更新（1時間前）</span></p>
-      <p id="open-slot" style="margin-top:6px;"><span class="open-badge" style="position:static">本日営業中（掲載者申告）</span></p>
     </header>
     <div class="photo-row">
       <span class="photo-cell"><img src="../images/p6-a.jpg" alt="ゆきの写真（AI生成）" data-name="ゆき" data-color="#4a7a8c" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
@@ -114,11 +113,10 @@ document.querySelectorAll('[data-diary]').forEach(function (li) {
   });
 });
 paintCounts();
-// ダッシュボード連動（端末内保存）：営業中バッジと更新時刻へ反映
+// カード状態の連動（端末内保存）：更新時刻へ反映
 var cst = getCardState(PID);
 if (cst) {
   if (typeof cst.open === 'boolean') {
-    document.getElementById('open-slot').style.display = cst.open ? '' : 'none';
   }
   if (cst.updatedAt) {
     var m = Math.max(0, Math.round((Date.now() - cst.updatedAt) / 60000));
