@@ -26,25 +26,31 @@
       <li><strong>運営の確認</strong>：運営が内容を確認し、問題がなければ表示に戻します。</li>
       <li><strong>削除の判断</strong>：削除する場合は、掲載した方への照会と、反論の機会を経てから判断します（情報流通プラットフォーム対処法の実務手順に沿います）。</li>
       <li><strong>繰り返しの通報</strong>：同じ通報元からの繰り返しの通報は、確認の際にその分を割り引いて判断します（嫌がらせ目的の通報への備えです）。</li>
+      <li><strong>結果の扱い</strong>：確認の結果は、通報した方・掲載した方のどちらにも、必要以上の情報を出さない形で扱います（誰が通報したか、判定の内訳は出しません）。</li>
     </ol>
   </section>
 
   <section class="block"><h2>申告フォーム（見本）</h2>
+    <div id="r-gate">
+      <p style="font-size:14px">サービス内からの通報は、<strong>ログインした利用者だけ</strong>が行えます（通報元を確認できるようにするためです）。</p>
+      <button class="btn primary" id="r-login" style="width:100%">ログインして通報する（デモ：仮ログイン）</button>
+      <p class="form-note">本番では、カード側のアカウントでログインします。利用者でない方（なりすましの被害に遭った方など）は、メール窓口から申告できます（アドレスは公開時に掲載します）。入口はこの2つだけです。</p>
+    </div>
+    <div id="r-form" style="display:none">
     <div class="field"><label>対象カード（選択）</label>
       <select id="r-target"></select>
     </div>
     <div class="field"><label>理由（選択）</label>
       <select id="r-reason">
-        <option>他人の写真・画像が使われている</option>
-        <option>なりすまし・本人ではない</option>
-        <option>性的サービスに当たる掲載</option>
-        <option>掲載範囲外の内容</option>
-        <option>リンク先が不適切</option>
+        <option>範囲外の内容（性的サービスなど）</option>
+        <option>権利侵害・なりすまし</option>
+        <option>リンク切れ・情報の誤り</option>
         <option>その他</option>
       </select>
     </div>
     <button class="btn primary" id="r-send" style="width:100%">通報する（デモ：この端末内で仮非表示になります）</button>
     <p class="form-note">文章の入力欄はありません。理由は選択式だけです。詳しい事情が必要な場合は、運営から掲載した方・通報した方へ照会します。</p>
+    </div>
   </section>
 
   <section class="block" id="r-status" style="display:none"><h2>いま仮非表示中のカード（この端末）</h2>
@@ -84,6 +90,13 @@
       });
     });
   }
+  var pre = new URLSearchParams(location.search).get('t');
+  if (pre && document.querySelector('#r-target option[value="' + pre + '"]')) sel.value = pre;
+  document.getElementById('r-login').addEventListener('click', function () {
+    document.getElementById('r-gate').style.display = 'none';
+    document.getElementById('r-form').style.display = '';
+    toast('仮ログインしました（デモ）');
+  });
   document.getElementById('r-send').addEventListener('click', function () {
     var id = sel.value;
     var prev = getStore('phide_' + id, null);
