@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>プロフィールカード（デモ）</title>
+<meta name="description" content="プロフィールカード（デモ）の公開プロフィールページ。掲載者・数値はすべて架空で、写真はURL参照で表示しています。">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<div class="demo-banner">デモサイトです。掲載者・店舗・数値はすべて架空で、外部リンクはすべてダミーです。</div>
+<div class="wrap">
+  <main id="view"><p style="padding:20px 0">読み込んでいます…</p></main>
+  <a class="back" href="../cards.html">← カード一覧にもどる</a>
+  <footer class="site">
+    <nav class="footer-links"><a href="../index.html">カードサイト入口</a><a href="../cards.html">カード一覧</a><a href="../dashboard.html">ダッシュボード（例）</a><a href="../edit.html">編集ページ（例）</a><a href="../terms.html">利用規約（仮）</a><a href="../report.html">通報・削除の窓口</a><a href="../operator.html">運営者情報</a></nav>
+    このカードはプロフィールカード（カードサイト）の公開プロフィールページです。情報の本体はこのカード側にあります。<br>
+    連絡・予約・決済は各リンク先（本人のページ）で行われます。
+  </footer>
+</div>
+<script src="../app.js"></script>
+<script>
+(function () {
+  var id = new URLSearchParams(location.search).get('id') || '';
+  var list = getStore('usercards', []);
+  var c = null;
+  for (var i = 0; i < list.length; i++) if (list[i].id === id) c = list[i];
+  var main = document.getElementById('view');
+  if (!c) {
+    main.innerHTML = '<section class="block"><h2>カードが見つかりません</h2><p style="font-size:14px">このカードは、この端末で作られたものではないか、削除されています。本番では発行されたURLで誰でも開けます。</p></section>';
+    return;
+  }
+  document.title = c.name + '｜プロフィールカード（デモ）';
+  setStore('views_' + id, getStore('views_' + id, 0) + 1);
+  function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); }
+  function resolveSrc(u) {
+    if (!u) return null;
+    if (u.indexOf('images/') === 0) return '../' + u;
+    return u;
+  }
+  var p1 = resolveSrc(c.photo1), p2 = resolveSrc(c.photo2);
+  function photoCell(src) {
+    if (!src) return '<span class="photo-cell"><span class="img-fallback" style="background:#999">' + esc(c.name).charAt(0) + '</span></span>';
+    return '<span class="photo-cell"><img src="' + esc(src) + '" alt="' + esc(c.name) + 'の写真" data-name="' + esc(c.name) + '" data-color="#999" onerror="imgFallback(this)"></span>';
+  }
+  var menuRows = (c.menu || []).map(function (m) {
+    return '<tr><td>' + esc(m.name) + '</td><td>' + esc(m.time) + '</td><td>' + esc(m.price) + '</td></tr>';
+  }).join('');
+  var liked = getStore('liked_' + id, false);
+  main.innerHTML =
+    '<header class="site" style="text-align:left">' +
+    '<div class="logo" style="font-size:20px">' + esc(c.name) + ' <span style="margin:0;font-size:13px;color:var(--sub)">' + esc(c.area) + '</span></div>' +
+    '<p class="tagline" style="text-align:left"><span class="update-note">更新しました：たった今</span></p>' +
+    '</header>' +
+    '<div class="photo-row">' + photoCell(p1) + photoCell(p2) + '</div>' +
+    '<div style="margin-top:10px;font-size:13px">' + starText(c.stars || 5) + ' <span style="font-size:11px;color:var(--sub)">本人のおすすめ度（掲載者自己申告）</span></div>' +
+    '<div class="btn-row">' +
+    '<button class="btn" id="v-like">♥ いいね <span id="v-like-num">' + (liked ? 1 : 0) + '</span></button>' +
+    '<button class="btn primary" id="v-share">シェア</button>' +
+    '</div>' +
+    '<section class="block"><h2>プロフィール</h2><dl class="kv">' +
+    '<dt>名前</dt><dd>' + esc(c.name) + '</dd>' +
+    '<dt>職種</dt><dd>' + esc(c.job) + '</dd>' +
+    '<dt>エリア</dt><dd>' + esc(c.area) + '</dd>' +
+    '<dt>対応エリア</dt><dd>' + esc((c.areas || []).join('／') || '—') + '</dd>' +
+    '<dt>タグ</dt><dd>' + esc((c.tags || []).join('／')) + '</dd>' +
+    '</dl></section>' +
+    (menuRows ? '<section class="block"><h2>メニュー（時間 × 料金）</h2><table class="breakdown"><tbody>' + menuRows + '</tbody></table>' +
+      '<p style="font-size:11px;color:var(--sub);margin-top:8px">メニュー・時間・料金は選択式の項目です。予約・申込はリンク先のページで行われます。</p></section>' : '') +
+    '<section class="block"><h2>リンク（外部）</h2><div class="ext-links">' +
+    '<a data-ext="home">公式プロフィール／予約ページ（外部）<span class="cnt" data-cnt="home"></span></a>' +
+    '<a data-ext="blog">日記（外部）<span class="cnt" data-cnt="blog"></span></a>' +
+    '<a data-ext="sns">SNS（外部）<span class="cnt" data-cnt="sns"></span></a>' +
+    '</div><p style="font-size:11px;color:var(--sub);margin-top:8px">※ 外部リンクは計測用の中継を経由する設計です（デモでは端末内でクリック数を数えています）。</p></section>' +
+    '<section class="block"><h2>掲示板での見え方（プレビュー）</h2>' +
+    '<p style="font-size:13px;color:var(--sub)">範囲内の職種のカードは「おすすめURL掲示板」に、この見た目で表示されます（デモではプレビュー表示。本番では掲載審査のあと掲示板に反映されます）。</p>' +
+    '<div style="margin-top:10px;border:1px solid #e7ddd2;border-radius:12px;padding:12px">' +
+    '<strong>' + esc(c.name) + '</strong> <span style="color:var(--sub);font-size:13px">' + esc(c.job) + '｜' + esc(c.area) + '</span><br>' +
+    '<span style="font-size:13px;color:var(--sub)">♥ 0　更新：たった今</span><br>' +
+    '<span style="font-size:13px;color:var(--accent)">公開プロフィールを見る →</span></div></section>';
+
+  var likeBtn = document.getElementById('v-like');
+  function paintLike() {
+    document.getElementById('v-like-num').textContent = liked ? 1 : 0;
+    likeBtn.classList.toggle('active', liked);
+  }
+  likeBtn.addEventListener('click', function () {
+    liked = !liked; setStore('liked_' + id, liked); paintLike();
+  });
+  paintLike();
+  document.getElementById('v-share').addEventListener('click', function () {
+    if (navigator.clipboard) { navigator.clipboard.writeText(location.href); toast('カードのURLをコピーしました'); }
+    else toast('カードURL：' + location.href);
+  });
+  function paintCounts() {
+    document.querySelectorAll('[data-cnt]').forEach(function (s) {
+      var n = getStore('clicks_' + id + '_' + s.dataset.cnt, 0);
+      s.textContent = n ? 'あなたの端末でのクリック ' + n + '回' : '';
+    });
+  }
+  document.querySelectorAll('[data-ext]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      countClick(id, a.dataset.ext);
+      paintCounts();
+      toast('デモのため外部ページには移動しません（クリックを計測しました）');
+    });
+  });
+  paintCounts();
+})();
+</script>
+</body>
+</html>

@@ -104,6 +104,12 @@
       </span></a>
   </main>
 
+  
+  <section class="block" id="my-cards" style="display:none"><h2>あなたが作ったカード（この端末）</h2>
+    <div id="my-cards-list"></div>
+    <p style="font-size:12px;color:var(--sub);margin-top:8px">デモでは、この端末で作ったカードだけがここに出ます。本番では登録した全員のカードが並びます。</p>
+  </section>
+</div>
   <footer class="site">
     <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
     各カードは本人の公開プロフィールページです。連絡・予約・決済は各リンク先（本人のページ）で行われます。<br>
@@ -127,6 +133,21 @@ document.querySelectorAll('.p-card').forEach(function (el) {
     if (upd) upd.textContent = '更新：' + relTime(m);
   }
 });
+</script>
+
+<script>
+// この端末で作ったカードを一覧へ追加（デモ）
+(function () {
+  var mine = [];
+  try { mine = JSON.parse(localStorage.getItem('usercards') || '[]'); } catch (e) {}
+  if (!mine.length) return;
+  document.getElementById('my-cards').style.display = '';
+  document.getElementById('my-cards-list').innerHTML = mine.map(function (c) {
+    function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); }
+    return '<p style="font-size:14px;margin:6px 0"><a href="card/view.html?id=' + esc(c.id) + '" style="color:var(--accent);font-weight:700">' +
+      esc(c.name) + '</a> <span style="color:var(--sub)">' + esc(c.job) + '｜' + esc(c.area) + '｜更新：たった今</span></p>';
+  }).join('');
+})();
 </script>
 </body>
 </html>

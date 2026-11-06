@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>カードを作る｜プロフィールカード（デモ）</title>
+<meta name="description" content="プロフィールカード（デモ）の新規作成ページ。職種を選んでURLを貼るだけで、公開プロフィールページが発行されます。文章の入力欄はありません。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo-banner">デモサイトです。ここで作ったカードは、この端末の中にだけ保存されます（本番では登録後に公開URLが発行されます）。</div>
+<div class="wrap">
+  <header class="site">
+    <div class="logo">カードを作る<span>デモ</span></div>
+    <p class="tagline">選ぶのと、URLを貼るだけ。文章は書きません。</p>
+  </header>
+
+  <nav class="menu">
+    <a href="index.html">入口</a>
+    <a href="cards.html">カード一覧</a>
+    <a href="create.html" class="on">カードを作る</a>
+    <a href="dashboard.html">数字を見る</a>
+  </nav>
+
+  <section class="block"><h2>基本情報（選択式）</h2>
+    <div class="field"><label>表示名</label><input type="text" id="c-name" placeholder="例：あや"></div>
+    <div class="field"><label>職種（選択）</label>
+      <select id="c-job">
+        <option>セラピスト</option>
+        <option>ネイリスト</option>
+        <option>エステティシャン</option>
+        <option>フリーアナウンサー</option>
+        <option>インフルエンサー</option>
+        <option>モデル</option>
+        <option>その他</option>
+      </select>
+      <p class="hint">カードは職種を選べる汎用基盤です。掲示板に表示されるのは、健全ジャンル〜メディア系〜フリーセラピストの範囲のカードだけです。</p>
+    </div>
+    <div class="field"><label>エリア（選択）</label>
+      <select id="c-area">
+        <option>銀座</option><option>新宿</option><option>六本木</option>
+        <option>池袋</option><option>渋谷</option><option>恵比寿</option><option>表参道</option><option>その他</option>
+      </select>
+    </div>
+    <div class="field"><label>おすすめ度 ⭐︎（自己申告）</label>
+      <select id="c-stars">
+        <option>⭐⭐⭐☆☆</option><option>⭐⭐⭐⭐☆</option><option selected>⭐⭐⭐⭐⭐</option>
+      </select>
+      <p class="hint">⭐︎は本人のおすすめ申告です。利用者の評価ではなく、並び順にも使われません。</p>
+    </div>
+    <div class="field"><label>タグ（選択・最大3つまで自動で表示）</label>
+      <select id="c-tag1"><option>アロマ</option><option>リンパ</option><option>整体</option><option>フェイシャル</option><option>ヘッドスパ</option><option>ジェルネイル</option><option>手描きアート</option></select>
+    </div>
+  </section>
+
+  <section class="block"><h2>写真（URLを貼る）</h2>
+    <div class="field"><label>写真1のURL</label><input type="url" id="c-photo1" placeholder="https://…（自分の写真ページのURL）"><p class="hint">写真そのものはカード側に置かず、URLで参照します。他人の画像は使えません。</p></div>
+    <div class="field"><label>写真2のURL</label><input type="url" id="c-photo2" placeholder="https://…"></div>
+  </section>
+
+  <section class="block"><h2>外部リンク（URLを貼る）</h2>
+    <div class="field"><label>公式プロフィール／予約ページのURL</label><input type="url" id="c-link-home" placeholder="https://…"></div>
+    <div class="field"><label>日記のURL</label><input type="url" id="c-link-blog" placeholder="https://…"></div>
+    <div class="field"><label>SNSのURL</label><input type="url" id="c-link-sns" placeholder="https://…"></div>
+    <p class="form-note">連絡・予約・決済は、すべてリンク先のページで行われます。このサイトは間に入りません。</p>
+  </section>
+
+  <section class="block"><h2>対応エリア（市区町村・チェック式）</h2>
+    <div class="field"><div id="c-areas"></div></div>
+  </section>
+
+  <section class="block"><h2>対応メニュー（時間 × 料金・選択式）</h2>
+    <div id="c-menus"></div>
+    <p class="form-note">メニュー・時間・料金はすべて選択式です。公開ページでは「基本情報」の次にメニュー表として並びます。</p>
+  </section>
+
+  <button class="btn primary" id="c-save" style="width:100%;margin-top:14px">カードを作って公開する</button>
+  <div id="c-done" style="margin-top:14px"></div>
+
+  <footer class="site">
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
+    掲載者・店舗はすべて架空のデモデータです。
+  </footer>
+</div>
+<script src="app.js"></script>
+<script>
+(function () {
+  var AREAS = ['千代田区', '中央区', '港区', '新宿区', '渋谷区', '豊島区', '品川区', '目黒区', 'その他'];
+  document.getElementById('c-areas').innerHTML = AREAS.map(function (a) {
+    return '<label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="' + a + '"> ' + a + '</label>';
+  }).join('');
+  var MN = ['アロマ', 'リンパ', '整体', 'フェイシャル', 'ヘッドスパ', 'その他'];
+  var TM = ['60分', '90分', '120分', '150分'];
+  var PR = ['¥8,000', '¥10,000', '¥12,000', '¥15,000', '¥20,000', '¥25,000'];
+  function opts(list, first) {
+    return (first ? '<option value="">' + first + '</option>' : '') + list.map(function (x) { return '<option>' + x + '</option>'; }).join('');
+  }
+  document.getElementById('c-menus').innerHTML = [1, 2, 3].map(function (i) {
+    return '<div style="display:flex;gap:8px;margin-bottom:10px">' +
+      '<select id="m-name' + i + '" style="flex:2">' + opts(MN, '（メニュー' + i + '：なし）') + '</select>' +
+      '<select id="m-time' + i + '" style="flex:1">' + opts(TM) + '</select>' +
+      '<select id="m-price' + i + '" style="flex:1">' + opts(PR) + '</select></div>';
+  }).join('');
+
+  function val(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+  document.getElementById('c-save').addEventListener('click', function () {
+    var name = val('c-name').trim();
+    if (!name) { toast('表示名を入れてください'); return; }
+    var starsSel = document.getElementById('c-stars');
+    var starsText = starsSel.options[starsSel.selectedIndex].text;
+    var slug = 'u' + Date.now().toString(36);
+    var card = {
+      id: slug, name: name, job: val('c-job'), area: val('c-area'),
+      stars: (starsText.match(/⭐/g) || []).length,
+      tags: [val('c-tag1')],
+      photo1: val('c-photo1'), photo2: val('c-photo2'),
+      links: { home: val('c-link-home'), blog: val('c-link-blog'), sns: val('c-link-sns') },
+      areas: Array.prototype.map.call(document.querySelectorAll('.area-chk:checked'), function (c) { return c.value; }),
+      menu: [1, 2, 3].map(function (i) {
+        return { name: val('m-name' + i), time: val('m-time' + i), price: val('m-price' + i) };
+      }).filter(function (m) { return m.name; }),
+      createdAt: Date.now()
+    };
+    var list = getStore('usercards', []);
+    list.push(card);
+    setStore('usercards', list);
+    var url = 'card/view.html?id=' + slug;
+    document.getElementById('c-done').innerHTML =
+      '<section class="block"><h2>公開されました</h2>' +
+      '<p style="font-size:14px">あなたのカードのURL：<br><a href="' + url + '" style="color:var(--accent);font-weight:700">' + url + '</a></p>' +
+      '<p style="font-size:13px;color:var(--sub)">このURLをSNSやプロフィールに貼れば、そのまま宣伝の入口になります。カード一覧にも追加されました。</p></section>';
+    toast('カードを公開しました');
+  });
+})();
+</script>
+</body>
+</html>
