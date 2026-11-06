@@ -3,62 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>プロフィールカード（デモ）｜職種を選べる宣伝カード</title>
-<meta name="description" content="プロフィールカード（デモ）：職種を選んで、URLを貼るだけで作れる公開プロフィールページ。SNS・日記・外部ページへのリンクを1枚に集約し、見られた数字が返ります。掲載者・数値はすべて架空のデモです。">
+<title>プロフィールカード（デモ）｜書かなくていい。貼るだけで、見つけてもらえる。</title>
+<meta name="description" content="プロフィールカード（デモ）：文章ゼロ、URLだけの個人の宣伝ページ。職種を選んでURLを貼るだけで作れ、見られた数字が返ります。掲載者・数値はすべて架空のデモです。">
 <link rel="stylesheet" href="style.css">
+<style>
+.lp-fv{position:relative;margin:0 -16px}
+.lp-fv img{width:100%;height:440px;object-fit:cover;object-position:center 12%;display:block}
+.lp-fv .shade{position:absolute;left:0;right:0;bottom:0;padding:56px 20px 18px;background:linear-gradient(transparent,rgba(18,14,12,.82));color:#fff}
+.lp-fv h1{font-size:27px;line-height:1.45;margin:0 0 8px}
+.lp-fv .fv-sub{font-size:13px;color:#eee7df;margin:0}
+.lp-cta2{text-align:center;margin:14px 0 4px}
+.lp-cta2 a{color:var(--accent);font-weight:700;font-size:15px}
+.sample-card{border:1px solid #e7ddd2;border-radius:14px;background:#fff;overflow:hidden}
+.sample-card .sc-photo{position:relative}
+.sample-card .sc-photo img{width:100%;height:210px;object-fit:cover;object-position:center 16%;display:block}
+.sample-card dl.kv{padding:6px 16px 12px}
+.foot-strip{display:flex;gap:10px;align-items:center;padding:12px 16px 16px;flex-wrap:wrap}
+.like-pill{border:2px solid var(--accent);color:var(--accent);border-radius:999px;padding:6px 16px;font-weight:700;font-size:14px;background:#fff}
+.upd-list{list-style:none;margin:0;padding:0}
+.upd-list li{padding:9px 2px;border-bottom:1px solid #eee4d9;font-size:14px}
+.mood-line{font-size:20px;font-weight:700;margin:26px 0 6px}
+</style>
 </head>
 <body>
 <div class="demo-banner">デモサイトです。掲載者・店舗・数値はすべて架空で、外部リンクはすべてダミーです。</div>
 <div class="wrap">
   <header class="site">
     <div class="logo">プロフィールカード<span>デモ</span></div>
-    <p class="tagline">カードサイト（カードが情報の本体です）</p>
   </header>
 
   <nav class="menu">
-    <a href="index.html" class="on">カードサイト入口</a>
+    <a href="index.html" class="on">入口</a>
     <a href="cards.html">カード一覧</a>
-    <a href="dashboard.html">ダッシュボード（例）</a>
-    <a href="edit.html">編集ページ（例）</a>
+    <a href="edit.html">カードを作る</a>
+    <a href="dashboard.html">数字を見る</a>
   </nav>
 
-  <div class="lp-hero">
-    <h1>あなたの宣伝ページを、<br><span class="hl">1枚のカード</span>に。</h1>
-    <p class="lead">SNS・写メ日記・予約ページ——バラバラのリンクを、短いURLのカード1枚に集約。<br>文章は書きません。職種を選んで、URLを貼るだけ。</p>
-    <div class="cta-row">
-      <a class="primary" href="cards.html">カード一覧を見る</a>
-      <a href="edit.html">カードを作る（編集ページ例）</a>
-      <a href="dashboard.html">数字の見え方（例）</a>
+  <div class="lp-fv">
+    <img src="images/p1-a.jpg" alt="りおの写真（AI生成）" data-name="りお" data-color="#c96f4a" onerror="imgFallback(this)">
+    <span class="ai-label" style="position:absolute;top:10px;right:10px">AI生成</span>
+    <div class="shade">
+      <h1>書かなくていい。<br>貼るだけで、見つけてもらえる。</h1>
+      <p class="fv-sub">文章ゼロ、URLだけ。個人の宣伝は、この1枚で終わる。</p>
     </div>
   </div>
 
-  <div class="feat-grid">
-    <div class="feat"><div class="f-ico">💼</div><div class="f-title">職種から選べる</div><div class="f-body">カード自体は、女性の個人活動者の幅広い職種で作れます。ただし、おすすめURL掲示板に表示されるのは、健全ジャンル（ネイリスト等）〜メディア系（フリーアナウンサー・インフルエンサー）〜フリーセラピストの範囲のカードだけです（範囲外のカードは、このカードサイトの中だけの存在になります）。</div></div>
-    <div class="feat"><div class="f-ico">🔗</div><div class="f-title">URLを貼るだけ</div><div class="f-body">写真も宣伝も、自分のページのURLを貼るだけ。カード側に文章や写真そのものは置きません。</div></div>
-    <div class="feat"><div class="f-ico">📊</div><div class="f-title">数字が返る</div><div class="f-body">カード閲覧数・いいね・外部ページへの移動（クリック）が、自分のダッシュボードに返ってきます。</div></div>
-    <div class="feat"><div class="f-ico">📤</div><div class="f-title">どこにでも貼れる</div><div class="f-body">カードのURLをSNSやプロフィールに貼れば、そのまま自分の宣伝の入口になります。</div></div>
+  <div class="cta-row" style="margin-top:18px">
+    <a class="primary" href="edit.html">カードを作る（無料）</a>
+  </div>
+  <p class="lp-cta2"><a href="#sample">→ 実物のサンプルを見る</a></p>
+
+  <div class="lp-sec" id="sample">
+    <h2>実物のサンプル（架空のデモ）</h2>
+    <div class="sample-card">
+      <div class="sc-photo">
+        <img src="images/p7-a.jpg" alt="ななの写真（AI生成）" data-name="なな" data-color="#b0526b" onerror="imgFallback(this)">
+        <span class="ai-label" style="position:absolute;top:10px;left:10px">AI生成</span>
+        <span class="open-badge" style="top:10px;right:10px">本日営業中（掲載者申告）</span>
+      </div>
+      <dl class="kv">
+        <dt>HN</dt><dd>なな</dd>
+        <dt>職種</dt><dd>ネイリスト</dd>
+        <dt>エリア</dt><dd>表参道</dd>
+        <dt>タグ</dt><dd>ジェル／手描きアート</dd>
+        <dt>おすすめ度</dt><dd>★★★★☆（本人の自己申告）</dd>
+        <dt>作品日記</dt><dd>外部ページへ →</dd>
+        <dt>SNS</dt><dd>Instagram／X（外部）→</dd>
+        <dt>店舗ページ</dt><dd>外部ページへ →</dd>
+      </dl>
+      <div class="foot-strip">
+        <span class="like-pill">♥ いいね 96</span>
+        <span style="font-size:13px;color:var(--sub)">あしあと 閲覧1,248・外部へ移動312（デモ数値）</span>
+      </div>
+    </div>
+    <p style="margin-top:10px;font-size:14px"><a href="card/7.html" style="color:var(--accent)">このカードの公開ページをそのまま見る →</a></p>
+  </div>
+
+  <p class="mood-line">リンクを貼り回して、疲れていませんか。</p>
+  <p style="font-size:14px;color:var(--sub)">プロフィールに貼るURLは、もう1つでいい。</p>
+  <div class="cta-row">
+    <a class="primary" href="edit.html">カードを作る（無料）</a>
+    <a href="cards.html">カード一覧を見る</a>
   </div>
 
   <div class="lp-sec">
-    <h2>カードは「3つのページ」でできています</h2>
-    <p>①公開ホーム（このカードの顔）／②ダッシュボード（数字が返る）／③編集ページ（URLを貼る・職種を選ぶ）</p>
-    <div class="cta-row">
-      <a href="card/1.html">① 公開カードの例（りお）</a>
-      <a href="dashboard.html">② ダッシュボード（例）</a>
-      <a href="edit.html">③ 編集ページ（例）</a>
+    <h2>最近の更新</h2>
+    <ul class="upd-list">
+      <li>本日 14:50　りお（銀座・セラピスト）が更新</li>
+      <li>本日 14:15　ゆき（恵比寿・セラピスト）が更新</li>
+      <li>本日 13:05　みゆ（新宿・セラピスト）が更新</li>
+      <li>本日 12:30　なな（表参道・ネイリスト）が更新</li>
+    </ul>
+  </div>
+
+  <div class="pr-slot">PR　広告枠の表示例です（ダミー）</div>
+
+  <div class="lp-sec" style="text-align:center">
+    <h2>あなたのURLも、1枚に。</h2>
+    <div class="cta-row" style="justify-content:center">
+      <a class="primary" href="edit.html">カードを作る（無料）</a>
     </div>
+    <p style="font-size:13px;color:var(--sub)">掲載はずっと無料。お金は広告から。掲載者からは取りません。</p>
   </div>
 
   <div class="lp-sec">
     <h2>掲示板からは、こう見えます</h2>
-    <p>範囲内のカードのURLは「おすすめURL掲示板」に、カードの見た目のまま表示されます。<br>押すと、このカードサイトの公開プロフィールページに飛びます。</p>
+    <p>範囲内のカードのURLは「おすすめURL掲示板」に、カードの見た目のまま表示されます。押すと、このカードサイトの公開プロフィールページに飛びます。掲示板の側はプロフィール情報を持たず、URLだけを置く別のサイトです。</p>
     <div class="cta-row">
       <a href="https://watengu.github.io/promo-board-demo/">おすすめURL掲示板を見る →</a>
     </div>
   </div>
 
   <footer class="site">
-    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a></nav>
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
     このサイト（プロフィールカード）が、プロフィール・写真・数字の本体です。掲示板はこのカードのURLを表示するだけの、別のサイトです。<br>
     連絡・予約・決済は各リンク先（本人のページ）で行われます。写真はAI生成画像を使用しています（各写真に「AI生成」表記）。掲載者・店舗はすべて架空のデモデータです。
   </footer>

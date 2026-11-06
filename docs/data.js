@@ -7,7 +7,6 @@ const PEOPLE = [
     updatedMin: 40, updatedLabel: "本日 14:50 更新",
     joinedDays: 21, openToday: true, mood: "🌿", streak: 5,
     shop: "サロン・フィオーレ銀座（架空）",
-    style: "アロマセラピスト歴5年。静かな個室で、ゆったりした施術が得意です。",
     height: "162cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -29,7 +28,6 @@ const PEOPLE = [
     updatedMin: 130, updatedLabel: "本日 13:05 更新",
     joinedDays: 3, openToday: true, mood: "☀️", streak: 3,
     shop: "メゾンロゼ新宿（架空）",
-    style: "リンパケア専門。むくみが気になる方に。明るく話しやすい雰囲気です。",
     height: "158cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -50,7 +48,6 @@ const PEOPLE = [
     updatedMin: 300, updatedLabel: "本日 10:20 更新",
     joinedDays: 45, openToday: false, mood: "🍵", streak: 2,
     shop: "サロン・セレッソ六本木（架空）",
-    style: "整体とストレッチを組み合わせた施術。肩こり・腰の重さにしっかりアプローチします。",
     height: "165cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -71,7 +68,6 @@ const PEOPLE = [
     updatedMin: 1500, updatedLabel: "昨日 21:40 更新",
     joinedDays: 12, openToday: true, mood: "🌙", streak: 1,
     shop: "メゾンクレール池袋（架空）",
-    style: "ホットストーンで深部から温めます。初めての方にも丁寧にご案内します。",
     height: "155cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -92,7 +88,6 @@ const PEOPLE = [
     updatedMin: 2900, updatedLabel: "10/30 18:15 更新",
     joinedDays: 60, openToday: false, mood: "📚", streak: 0,
     shop: "ミルフィーユ渋谷（架空）",
-    style: "足裏から全身を整えるリフレクソロジー。静かな時間を過ごしたい方に。",
     height: "160cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -112,7 +107,6 @@ const PEOPLE = [
     updatedMin: 75, updatedLabel: "本日 14:15 更新",
     joinedDays: 7, openToday: true, mood: "✨", streak: 4,
     shop: "サロン・ルーチェ恵比寿（架空）",
-    style: "夜の時間帯を中心に活動中。フェイシャルとオイルの組み合わせが人気です。",
     height: "163cm", job: "セラピスト", work: "フリー（店舗所属なし）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },
@@ -134,7 +128,6 @@ const PEOPLE = [
     updatedMin: 180, updatedLabel: "本日 12:30 更新",
     joinedDays: 10, openToday: false, mood: "🎨", streak: 2,
     shop: "フリーネイリスト（レンタルサロン利用）",
-    style: "ニュアンスネイルと手描きアートが得意なフリーネイリスト。持ち込みデザインも歓迎です。",
     height: "—", job: "ネイリスト", work: "フリー（レンタルサロン利用）",
     links: [
       { type: "home", label: "公式プロフィール（外部）", url: "#" },

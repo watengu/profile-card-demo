@@ -7,14 +7,6 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <p class="gate-lead">このサイトはフリーセラピストの宣伝リンク集です。成人向けの内容を含む場合があります。</p>
-    <p class="gate-q">あなたは18歳以上ですか？</p>
-    <button id="gate-yes" class="gate-btn yes">はい、18歳以上です</button>
-    <button id="gate-no" class="gate-btn no">いいえ</button>
-    <p id="gate-msg" class="gate-msg"></p>
-    <p class="gate-note">※これはデモサイトです。掲載者・店舗・数値はすべて架空で、写真はAI生成画像を使用しています。</p>
-  </div>
-</div>
 <div class="demo-banner">デモサイトです。このダッシュボードの数値はすべて架空の表示例です。</div>
 <div class="wrap">
   <header class="site">
@@ -33,6 +25,11 @@
 
   <main id="db"></main>
 
+  <section class="block"><h2>この端末での実測（デモ連動）</h2>
+    <div id="device-stats"></div>
+    <p style="font-size:12px;color:var(--sub);margin-top:10px">上の架空の表示例とは別に、あなたがこの端末で公開カードを開く・押すたびに実際に数えた数字です。本番では全端末分の集計（閲覧・いいね・リンク別クリック）がここに返ります。計測は集計のみで、個人を特定する情報は持ちません。</p>
+  </section>
+
   <section class="block"><h2>カードの状態（デモ連動）</h2>
     <p style="font-size:13px">この操作は端末内に保存され、ホームの「りお」カードの「本日営業中」バッジと更新時刻に反映されます（デモ用の疑似連動）。</p>
     <label class="switch-row"><span>本日営業中（掲載者申告）</span><span class="switch"><input type="checkbox" id="open-toggle"><span class="slider"></span></span></label>
@@ -42,7 +39,7 @@
   <a class="back" href="cards.html">← カード一覧にもどる</a>
 
   <footer class="site">
-    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="edit.html">編集ページ（例）</a></nav>
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
     数字フィードバックの表示例です（すべて架空の数値）。<br>
     本番では本人のカード分だけが表示されます。計測は集計のみで、個人を特定する情報は持ちません。
   </footer>
@@ -56,8 +53,8 @@ document.getElementById('db-sub').textContent =
 document.getElementById('db').innerHTML =
   '<div class="stat-grid">' +
   '<div class="stat"><div class="s-label">👁 カード閲覧数</div><div class="s-num">' + ANALYTICS.views.toLocaleString() + '</div><div class="s-delta">先週比 ' + ANALYTICS.viewsDelta + '</div></div>' +
-  '<div class="stat"><div class="s-label">🚀 外部ページへの移動（クリック）</div><div class="s-num">' + ANALYTICS.clicksTotal + '</div><div class="s-delta">先週比 ' + ANALYTICS.clicksDelta + '</div></div>' +
   '<div class="stat"><div class="s-label">💖 いいね</div><div class="s-num">' + ANALYTICS.likes + '</div><div class="s-delta">　</div></div>' +
+  '<div class="stat"><div class="s-label">🚀 外部ページへの移動（クリック）</div><div class="s-num">' + ANALYTICS.clicksTotal + '</div><div class="s-delta">先週比 ' + ANALYTICS.clicksDelta + '</div></div>' +
   '<div class="stat"><div class="s-label">★ お気に入り登録</div><div class="s-num">' + ANALYTICS.favorites + '</div><div class="s-delta">　</div></div>' +
   '</div>' +
   '<section class="block"><h2>リンク別の移動内訳</h2><table class="breakdown">' +
@@ -97,6 +94,31 @@ document.getElementById('update-btn').addEventListener('click', function () {
   toast('更新しました。カードと掲示板の鮮度の帯に反映されます');
 });
 paintState();
+</script>
+
+<script>
+// 端末内実測の表示（公開カード側で数えた localStorage カウンタを読む）
+(function () {
+  var pid = ANALYTICS.personId;
+  function n(k) { return getStore(k, 0); }
+  var clickTotal = n('clicks_' + pid + '_home') + n('clicks_' + pid + '_blog') + n('clicks_' + pid + '_sns') + n('clicks_' + pid + '_shop');
+  var rows = [
+    ['外部リンク：公式プロフィール', n('clicks_' + pid + '_home')],
+    ['外部リンク：写メ日記', n('clicks_' + pid + '_blog')],
+    ['外部リンク：SNS', n('clicks_' + pid + '_sns')],
+    ['外部リンク：店舗ページ', n('clicks_' + pid + '_shop')],
+    ['お気に入り（この端末）', getStore('fav_' + pid, false) ? 1 : 0]
+  ];
+  document.getElementById('device-stats').innerHTML =
+    '<div class="stat-grid">' +
+    '<div class="stat"><div class="s-label">👁 閲覧数</div><div class="s-num">' + n('views_' + pid) + '</div><div class="s-delta">この端末で開いた回数</div></div>' +
+    '<div class="stat"><div class="s-label">💖 いいね</div><div class="s-num">' + (getStore('liked_' + pid, false) ? 1 : 0) + '</div><div class="s-delta">この端末</div></div>' +
+    '<div class="stat"><div class="s-label">🚀 外部クリック数</div><div class="s-num">' + clickTotal + '</div><div class="s-delta">リンク別内訳は下記</div></div>' +
+    '</div>' +
+    '<table class="breakdown">' + rows.map(function (r) {
+      return '<tr><td>' + r[0] + '</td><td>' + r[1] + ' 回</td></tr>';
+    }).join('') + '</table>';
+})();
 </script>
 </body>
 </html>

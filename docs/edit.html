@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="demo-banner">デモサイトです。これは編集ページの見本で、入力内容は保存されません（架空データ）。</div>
+<div class="demo-banner">デモサイトです。これは編集ページの見本です。入力はこの端末内に保存され、公開カードに反映されます（架空データ・デモ）。</div>
 <div class="wrap">
   <header class="site">
     <div class="logo">カード編集<span>例</span></div>
@@ -37,7 +37,7 @@
       </select>
       <p class="hint">カードは職種を選べる汎用基盤です。職種は幅広く選べます。ただし掲示板に表示されるのは、健全ジャンル（ネイリスト等）〜メディア系（フリーアナウンサー・インフルエンサー）〜フリーセラピストの範囲のカードだけです。</p>
     </div>
-    <div class="field"><label>表示名</label><input type="text" value="りお"></div>
+    <div class="field"><label>表示名</label><input type="text" id="f-name" value="りお"></div>
     <div class="field"><label>エリア（選択）</label>
       <select id="f-area">
         <option selected>銀座</option><option>新宿</option><option>六本木</option>
@@ -53,31 +53,42 @@
   </section>
 
   <section class="block"><h2>写真（URLを貼る）</h2>
-    <div class="field"><label>写真1のURL</label><input type="url" value="https://watengu.github.io/profile-card-demo/images/p1-a.jpg"><p class="hint">写真そのものはカード側に置かず、URLで参照します（デモではこのサイト内の画像URL）。</p></div>
-    <div class="field"><label>写真2のURL</label><input type="url" value="https://watengu.github.io/profile-card-demo/images/p1-b.jpg"></div>
+    <div class="field"><label>写真1のURL</label><input type="url" id="f-photo1" value="images/p1-a.jpg"><p class="hint">写真そのものはカード側に置かず、URLで参照します（デモではこのサイト内の画像URL）。</p></div>
+    <div class="field"><label>写真2のURL</label><input type="url" id="f-photo2" value="images/p1-b.jpg"></div>
   </section>
 
   <section class="block"><h2>外部リンク（URLを貼る）</h2>
-    <div class="field"><label>公式プロフィールのURL</label><input type="url" value="" placeholder="https://…（自分のページのURL）"></div>
-    <div class="field"><label>写メ日記のURL</label><input type="url" value="" placeholder="https://…"></div>
-    <div class="field"><label>SNSのURL</label><input type="url" value="" placeholder="https://…"></div>
-    <div class="field"><label>所属店舗ページのURL</label><input type="url" value="" placeholder="https://…"></div>
+    <div class="field"><label>公式プロフィールのURL</label><input type="url" id="f-link-home" value="" placeholder="https://…（自分のページのURL）"></div>
+    <div class="field"><label>写メ日記のURL</label><input type="url" id="f-link-blog" value="" placeholder="https://…"></div>
+    <div class="field"><label>SNSのURL</label><input type="url" id="f-link-sns" value="" placeholder="https://…"></div>
+    <div class="field"><label>所属店舗ページのURL</label><input type="url" id="f-link-shop" value="" placeholder="https://…"></div>
     <p class="form-note">文章は書きません。並べるのは、自分のページへのURLだけです。連絡・予約・決済は、すべてリンク先のページで行われます。</p>
+  </section>
+
+  
+  <section class="block"><h2>対応エリア（市区町村・チェック式）</h2>
+    <div class="field"><label>サービス提供エリア（複数選択可）</label><div><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="千代田区"> 千代田区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="中央区" checked> 中央区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="港区"> 港区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="新宿区"> 新宿区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="渋谷区"> 渋谷区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="豊島区"> 豊島区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="品川区"> 品川区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="目黒区"> 目黒区</label><label style="display:inline-block;margin:4px 10px 4px 0;font-size:14px"><input type="checkbox" class="area-chk" value="その他"> その他</label></div>
+    <p class="hint">文章では書かず、市区町村をチェックで選びます。公開カードの「対応エリア」に表示されます。</p></div>
+  </section>
+
+  <section class="block"><h2>対応メニュー（時間 × 料金・選択式）</h2>
+    <div style="display:flex;gap:8px;margin-bottom:10px"><select id="m-name1" style="flex:2"><option value="">（メニュー1：なし）</option><option>アロマ</option><option>リンパ</option><option>整体</option><option>フェイシャル</option><option>ヘッドスパ</option><option>その他</option></select><select id="m-time1" style="flex:1"><option>60分</option><option>90分</option><option>120分</option><option>150分</option></select><select id="m-price1" style="flex:1"><option>¥8,000</option><option>¥10,000</option><option>¥12,000</option><option>¥15,000</option><option>¥20,000</option><option>¥25,000</option></select></div><div style="display:flex;gap:8px;margin-bottom:10px"><select id="m-name2" style="flex:2"><option value="">（メニュー2：なし）</option><option>アロマ</option><option>リンパ</option><option>整体</option><option>フェイシャル</option><option>ヘッドスパ</option><option>その他</option></select><select id="m-time2" style="flex:1"><option>60分</option><option>90分</option><option>120分</option><option>150分</option></select><select id="m-price2" style="flex:1"><option>¥8,000</option><option>¥10,000</option><option>¥12,000</option><option>¥15,000</option><option>¥20,000</option><option>¥25,000</option></select></div><div style="display:flex;gap:8px;margin-bottom:10px"><select id="m-name3" style="flex:2"><option value="">（メニュー3：なし）</option><option>アロマ</option><option>リンパ</option><option>整体</option><option>フェイシャル</option><option>ヘッドスパ</option><option>その他</option></select><select id="m-time3" style="flex:1"><option>60分</option><option>90分</option><option>120分</option><option>150分</option></select><select id="m-price3" style="flex:1"><option>¥8,000</option><option>¥10,000</option><option>¥12,000</option><option>¥15,000</option><option>¥20,000</option><option>¥25,000</option></select></div>
+    <p class="form-note">メニュー・時間・料金はすべて選択式です。公開カードでは「基本情報」の次にメニュー表として並びます。</p>
   </section>
 
   <section class="block"><h2>カードの状態</h2>
     <label class="switch-row"><span>本日営業中（掲載者申告）</span><span class="switch"><input type="checkbox" id="open-toggle"><span class="slider"></span></span></label>
     <button class="btn primary" id="update-btn" style="width:100%;margin-top:12px">更新しました</button>
     <p class="state-now" id="state-now"></p>
-    <p class="form-note">このスイッチと更新ボタンだけは、デモ用の端末内連動の対象です。操作すると、公開カード・カード一覧・掲示板サイトの「りお」カードに反映されます（両サイトが同一ドメインのデモのため）。それ以外の入力は保存されません。</p>
+    <p class="form-note">このスイッチと更新ボタンは即時に反映されます。「保存する」を押すと、上の入力（職種・表示名・エリア・おすすめ度・写真URL・リンクURL・対応エリア・対応メニュー）も端末内に保存され、公開カードに反映されます（デモ用の端末内連動）。</p>
   </section>
 
-  <button class="btn primary" id="save-btn" style="width:100%;margin-top:14px">保存する（デモ：保存されません）</button>
+  <button class="btn primary" id="save-btn" style="width:100%;margin-top:14px">保存する（デモ：端末内に保存）</button>
   <p style="margin-top:12px;font-size:14px">公開ページ：<a href="card/1.html" style="color:var(--accent)">りお のプロフィールカードを見る →</a> ／ <a href="dashboard.html" style="color:var(--accent)">数字を見る（ダッシュボード例）→</a></p>
 
   <footer class="site">
-    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a></nav>
-    編集ページの見本です。入力内容は保存されません。掲載者・店舗・数値はすべて架空のデモデータです。
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
+    編集ページの見本です。入力は端末内に保存され、公開カードに反映されます。掲載者・店舗・数値はすべて架空のデモデータです。
   </footer>
 </div>
 <script src="data.js"></script>
@@ -107,10 +118,54 @@ document.getElementById('update-btn').addEventListener('click', function () {
   paintState();
   toast('更新しました。公開カードと掲示板の鮮度の帯に反映されます');
 });
-document.getElementById('save-btn').addEventListener('click', function () {
-  toast('デモのため、入力内容は保存されません');
-});
+
 paintState();
+</script>
+
+<script>
+// 入力項目の保存と復元（デモ：端末内 localStorage → 公開カードへ反映）
+(function () {
+  var st = getCardState(1) || {};
+  var prof = st.profile || {};
+  function val(id) { var el = document.getElementById(id); return el ? el.value : ''; }
+  function setVal(id, v) { var el = document.getElementById(id); if (el && v !== undefined && v !== null) el.value = v; }
+  function setSel(id, v) {
+    var el = document.getElementById(id); if (!el || !v) return;
+    for (var i = 0; i < el.options.length; i++) {
+      if (el.options[i].text === v || el.options[i].value === v) { el.selectedIndex = i; return; }
+    }
+  }
+  // 復元
+  setSel('f-job', prof.job); setVal('f-name', prof.name); setSel('f-area', prof.area);
+  if (prof.stars) setSel('f-stars', prof.starsText);
+  setVal('f-photo1', prof.photo1); setVal('f-photo2', prof.photo2);
+  var lk = prof.links || {};
+  setVal('f-link-home', lk.home); setVal('f-link-blog', lk.blog); setVal('f-link-sns', lk.sns); setVal('f-link-shop', lk.shop);
+  if (prof.areas) {
+    document.querySelectorAll('.area-chk').forEach(function (c) { c.checked = prof.areas.indexOf(c.value) >= 0; });
+  }
+  (prof.menu || []).forEach(function (m, i) {
+    setSel('m-name' + (i + 1), m.name); setSel('m-time' + (i + 1), m.time); setSel('m-price' + (i + 1), m.price);
+  });
+  // 保存
+  document.getElementById('save-btn').addEventListener('click', function () {
+    var st2 = getCardState(1) || {};
+    var starsSel = document.getElementById('f-stars');
+    var starsText = starsSel.options[starsSel.selectedIndex].text;
+    st2.profile = {
+      job: val('f-job'), name: val('f-name'), area: val('f-area'),
+      stars: (starsText.match(/⭐/g) || []).length, starsText: starsText,
+      photo1: val('f-photo1'), photo2: val('f-photo2'),
+      links: { home: val('f-link-home'), blog: val('f-link-blog'), sns: val('f-link-sns'), shop: val('f-link-shop') },
+      areas: Array.prototype.map.call(document.querySelectorAll('.area-chk:checked'), function (c) { return c.value; }),
+      menu: [1, 2, 3].map(function (i) {
+        return { name: val('m-name' + i), time: val('m-time' + i), price: val('m-price' + i) };
+      }).filter(function (m) { return m.name; })
+    };
+    setStore('cardstate_1', st2);
+    toast('保存しました（端末内）。公開カードに反映されます');
+  });
+})();
 </script>
 </body>
 </html>

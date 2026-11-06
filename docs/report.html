@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>通報・削除の窓口｜プロフィールカード（デモ）</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="demo-banner">デモサイトです。この窓口は見本で、送信してもどこにも届きません。本番では運営が受け付け、確認のうえ対応します。</div>
+<div class="wrap">
+  <header class="site">
+    <div class="logo">通報・削除の窓口<span>例</span></div>
+    <p class="tagline">プロフィールカード（デモ）</p>
+  </header>
+  <nav class="menu">
+    <a href="index.html">入口</a>
+    <a href="cards.html">カード一覧</a>
+    <a href="edit.html">カードを作る</a>
+    <a href="dashboard.html">数字を見る</a>
+  </nav>
+
+  <section class="block"><h2>申告フォーム（見本）</h2>
+    <div class="field"><label>対象カードのURL</label><input type="url" id="r-url" placeholder="https://…/card/○.html"></div>
+    <div class="field"><label>理由（選択）</label>
+      <select id="r-reason">
+        <option>他人の写真・画像が使われている</option>
+        <option>なりすまし・本人ではない</option>
+        <option>掲載範囲外の内容</option>
+        <option>リンク先が不適切</option>
+        <option>その他（詳細はリンク先ページ側の窓口へ）</option>
+      </select>
+    </div>
+    <button class="btn primary" id="r-send" style="width:100%">送信する（デモ：送信されません）</button>
+    <p class="form-note">本番のフロー：申告を受けたら運営が確認し、対象カードの表示を止めます。再掲載は新規の申告・再審査からのみ行います。</p>
+  </section>
+
+  <a class="back" href="index.html">← 入口にもどる</a>
+  <footer class="site">
+    <nav class="footer-links"><a href="index.html">カードサイト入口</a><a href="cards.html">カード一覧</a><a href="dashboard.html">ダッシュボード（例）</a><a href="edit.html">編集ページ（例）</a><a href="terms.html">利用規約（仮）</a><a href="report.html">通報・削除の窓口</a><a href="operator.html">運営者情報</a></nav>
+    掲載者・店舗はすべて架空のデモデータです。
+  </footer>
+</div>
+<script src="app.js"></script>
+<script>
+document.getElementById('r-send').addEventListener('click', function () {
+  toast('デモのため送信されません（本番では運営が受け付けます）');
+});
+</script>
+</body>
+</html>
