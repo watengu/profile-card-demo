@@ -107,12 +107,14 @@ function paintState() {
   nowEl.textContent = '現在の状態：本日営業中 ' + (curOpen() ? 'ON' : 'OFF') + '／最終更新：' + upd;
 }
 toggle.addEventListener('change', function () {
+  cstate = getCardState(tgt.id) || {};
   cstate.open = toggle.checked;
   setStore('cardstate_' + tgt.id, cstate);
   paintState();
   toast(toggle.checked ? '「本日営業中」をONにしました（公開カードと掲示板に反映されます）' : '「本日営業中」をOFFにしました（公開カードと掲示板に反映されます）');
 });
 document.getElementById('update-btn').addEventListener('click', function () {
+  cstate = getCardState(tgt.id) || {};
   cstate.updatedAt = Date.now();
   setStore('cardstate_' + tgt.id, cstate);
   paintState();
