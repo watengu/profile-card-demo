@@ -114,8 +114,14 @@
 <script>
 // カード状態の連動（端末内保存）：更新時刻へ反映
 document.querySelectorAll('.p-card').forEach(function (el) {
-  var st = getCardState(+el.dataset.id);
-  if (!st) return;
+  var st = getCardState(+el.dataset.id) || {};
+  var ph = null;
+  try { ph = JSON.parse(localStorage.getItem('phide_' + el.dataset.id) || 'null'); } catch (e) {}
+  if (ph) {
+    el.removeAttribute('href');
+    el.innerHTML = '<div style="padding:18px 14px;font-size:13px;color:var(--sub)">このカードは通報により仮非表示中です（運営確認中）</div>';
+    return;
+  }
   if (st.updatedAt) {
     var m = Math.max(0, Math.round((Date.now() - st.updatedAt) / 60000));
     var upd = el.querySelector('.upd-time');

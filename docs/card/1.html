@@ -174,5 +174,17 @@ setStore('views_' + PID, getStore('views_' + PID, 0) + 1);
   if (s2) document.getElementById('p-photo2').src = s2;
 })();
 </script>
+
+<script>
+// 通報による仮非表示（端末内デモ）：運営確認中はページを表示しない
+(function () {
+  var h = null;
+  try { h = JSON.parse(localStorage.getItem('phide_1') || 'null'); } catch (e) {}
+  if (h) {
+    var m = document.getElementById('detail');
+    if (m) m.innerHTML = '<section class="block"><h2>このカードは仮非表示中です</h2><p style="font-size:14px">通報を受けて、運営が内容を確認しています。問題がなければ表示に戻ります。</p></section>';
+  }
+})();
+</script>
 </body>
 </html>

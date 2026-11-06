@@ -30,6 +30,10 @@
     main.innerHTML = '<section class="block"><h2>カードが見つかりません</h2><p style="font-size:14px">このカードは、この端末で作られたものではないか、削除されています。本番では発行されたURLで誰でも開けます。</p></section>';
     return;
   }
+  if (getStore('phide_' + id, null)) {
+    main.innerHTML = '<section class="block"><h2>このカードは仮非表示中です</h2><p style="font-size:14px">通報を受けて、運営が内容を確認しています。問題がなければ表示に戻ります。</p></section>';
+    return;
+  }
   document.title = c.name + '｜プロフィールカード（デモ）';
   setStore('views_' + id, getStore('views_' + id, 0) + 1);
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (m) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[m]; }); }
