@@ -24,6 +24,7 @@
 .upd-list li{padding:9px 2px;border-bottom:1px solid #eee4d9;font-size:14px}
 .mood-line{font-size:20px;font-weight:700;margin:26px 0 6px}
 </style>
+<style>body{padding-bottom:78px}</style>
 </head>
 <body>
 <div class="demo-banner">デモサイトです。掲載者・店舗・数値はすべて架空で、外部リンクはすべてダミーです。</div>
@@ -47,6 +48,13 @@
       <p class="fv-sub">文章ゼロ、URLだけ。個人の宣伝は、この1枚で終わる。</p>
     </div>
   </div>
+
+
+  <div class="line-hero-btn" id="line-hero">
+    <span class="line-mark">LINE</span>
+    <span><span class="line-main">LINEで登録・相談する</span><br><span class="line-sub">カードの作り方・掲載の相談もこちら</span></span>
+  </div>
+  <p style="font-size:13px;color:var(--sub);text-align:center">登録や掲載の相談は、公式LINEがいちばん早くて確実です</p>
 
   <div class="cta-row" style="margin-top:18px">
     <a class="primary" href="create.html">カードを作る（無料）</a>
@@ -99,11 +107,6 @@
 
   <div class="lp-sec">
     <h2>登録・相談は、公式LINEで</h2>
-    <div class="line-hero-btn" id="line-hero">
-      <span class="line-mark">LINE</span>
-      <span><span class="line-main">LINEで登録・相談する</span><br><span class="line-sub">カードの作り方・掲載の相談もこちら</span></span>
-    </div>
-    <p style="font-size:13px;color:var(--sub);text-align:center">登録や掲載の相談は、公式LINEがいちばん早くて確実です</p>
     <div class="line-card">
       <p style="font-weight:700;margin:0 0 8px">公式LINEで、もっと便利に</p>
       <div style="position:relative;border-radius:12px;overflow:hidden">
@@ -144,9 +147,14 @@
 </div>
 <script src="app.js"></script>
 
+<div class="line-fixed-bar">
+  <span class="lfb-line" id="line-fixed"><span class="line-mark">LINE</span>LINEで登録・相談</span>
+  <a class="lfb-sub" href="create.html">カードを作る</a>
+</div>
 <script>
 document.getElementById('line-hero').addEventListener('click', function () { toast('LINE公式アカウントは開設準備中です（プレビュー）'); });
 document.getElementById('line-add').addEventListener('click', function () { toast('LINE公式アカウントは開設準備中です（プレビュー）'); });
+document.getElementById('line-fixed').addEventListener('click', function () { toast('LINE公式アカウントは開設準備中です（プレビュー）'); });
 </script>
 </body>
 </html>
