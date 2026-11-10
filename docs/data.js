@@ -140,6 +140,102 @@ const PEOPLE = [
       { date: "2026-10-27", title: "10/27 持ち込みデザインについて", url: "#" }
     ],
     photos: ["images/p7-a.jpg", "images/p7-b.jpg"]
+  },
+  {
+    id: 8, name: "Mia", area: "渋谷", age: 25,
+    tags: ["ファッション", "写真", "コーデ"],
+    stars: 5, likes: 196, views: 2980,
+    updatedMin: 25, updatedLabel: "本日 18:35 更新",
+    joinedDays: 1, mood: "✨", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 撮影の記録（外部ページ）", url: "#" },
+      { date: "2026-11-08", title: "11/8 秋コーデのまとめ", url: "#" },
+      { date: "2026-11-05", title: "11/5 お気に入りの小物", url: "#" }
+    ],
+    photos: ["images/p8-a.jpg", "images/p8-b.jpg"]
+  },
+  {
+    id: 9, name: "あおい", area: "新宿", age: 24,
+    tags: ["モデル", "写真", "カフェ"],
+    stars: 4, likes: 88, views: 1240,
+    updatedMin: 95, updatedLabel: "本日 17:25 更新",
+    joinedDays: 1, mood: "☀️", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 試着の記録（外部ページ）", url: "#" },
+      { date: "2026-11-07", title: "11/7 カフェで読書", url: "#" }
+    ],
+    photos: ["images/p9-a.jpg", "images/p9-b.jpg"]
+  },
+  {
+    id: 10, name: "sakura", area: "池袋", age: 26,
+    tags: ["モデル", "ファッション", "秋コーデ"],
+    stars: 5, likes: 142, views: 1870,
+    updatedMin: 160, updatedLabel: "本日 16:20 更新",
+    joinedDays: 1, mood: "🌸", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 秋の装い（外部ページ）", url: "#" },
+      { date: "2026-11-06", title: "11/6 撮影の裏側", url: "#" }
+    ],
+    photos: ["images/p10-a.jpg", "images/p10-b.jpg"]
+  },
+  {
+    id: 11, name: "モデルC", area: "銀座", age: 25,
+    tags: ["写真", "読書", "カフェ"],
+    stars: 4, likes: 97, views: 1360,
+    updatedMin: 220, updatedLabel: "本日 15:20 更新",
+    joinedDays: 1, mood: "📚", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 カフェ読書の記録（外部ページ）", url: "#" },
+      { date: "2026-11-04", title: "11/4 街歩きスナップ", url: "#" }
+    ],
+    photos: ["images/p11-a.jpg", "images/p11-b.jpg"]
+  },
+  {
+    id: 12, name: "MIYU", area: "原宿", age: 23,
+    tags: ["ダンス", "動画", "ファッション"],
+    stars: 5, likes: 176, views: 2340,
+    updatedMin: 55, updatedLabel: "本日 18:05 更新",
+    joinedDays: 1, mood: "🎵", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 ダンス動画の記録（外部ページ）", url: "#" },
+      { date: "2026-11-08", title: "11/8 新しい振り付け", url: "#" }
+    ],
+    photos: ["images/p12-a.jpg", "images/p12-b.jpg"]
   }
 ];
 
