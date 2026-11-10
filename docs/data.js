@@ -142,7 +142,7 @@ const PEOPLE = [
     photos: ["images/p7-a.jpg", "images/p7-b.jpg"]
   },
   {
-    id: 8, name: "Mia", area: "渋谷", age: 25,
+    id: 8, sample: true, name: "Mia", area: "渋谷", age: 25,
     tags: ["ファッション", "写真", "コーデ"],
     stars: 5, likes: 196, views: 2980,
     updatedMin: 25, updatedLabel: "本日 18:35 更新",
@@ -162,7 +162,7 @@ const PEOPLE = [
     photos: ["images/p8-a.jpg", "images/p8-b.jpg"]
   },
   {
-    id: 9, name: "あおい", area: "新宿", age: 24,
+    id: 9, sample: true, name: "あおい", area: "新宿", age: 24,
     tags: ["モデル", "写真", "カフェ"],
     stars: 4, likes: 88, views: 1240,
     updatedMin: 95, updatedLabel: "本日 17:25 更新",
@@ -181,7 +181,7 @@ const PEOPLE = [
     photos: ["images/p9-a.jpg", "images/p9-b.jpg"]
   },
   {
-    id: 10, name: "sakura", area: "池袋", age: 26,
+    id: 10, sample: true, name: "sakura", area: "池袋", age: 26,
     tags: ["モデル", "ファッション", "秋コーデ"],
     stars: 5, likes: 142, views: 1870,
     updatedMin: 160, updatedLabel: "本日 16:20 更新",
@@ -200,7 +200,7 @@ const PEOPLE = [
     photos: ["images/p10-a.jpg", "images/p10-b.jpg"]
   },
   {
-    id: 11, name: "モデルC", area: "銀座", age: 25,
+    id: 11, sample: true, name: "モデルC", area: "銀座", age: 25,
     tags: ["写真", "読書", "カフェ"],
     stars: 4, likes: 97, views: 1360,
     updatedMin: 220, updatedLabel: "本日 15:20 更新",
@@ -219,7 +219,7 @@ const PEOPLE = [
     photos: ["images/p11-a.jpg", "images/p11-b.jpg"]
   },
   {
-    id: 12, name: "MIYU", area: "原宿", age: 23,
+    id: 12, sample: true, name: "MIYU", area: "原宿", age: 23,
     tags: ["ダンス", "動画", "ファッション"],
     stars: 5, likes: 176, views: 2340,
     updatedMin: 55, updatedLabel: "本日 18:05 更新",
@@ -238,7 +238,7 @@ const PEOPLE = [
     photos: ["images/p12-a.jpg", "images/p12-b.jpg"]
   },
   {
-    id: 13, name: "ララァ", area: "中目黒", age: 22,
+    id: 13, sample: true, name: "ララァ", area: "中目黒", age: 22,
     tags: ["写真", "ファッション", "キャラクター"],
     stars: 5, likes: 158, views: 2010,
     updatedMin: 35, updatedLabel: "本日 18:25 更新",
