@@ -236,6 +236,25 @@ const PEOPLE = [
       { date: "2026-11-08", title: "11/8 新しい振り付け", url: "#" }
     ],
     photos: ["images/p12-a.jpg", "images/p12-b.jpg"]
+  },
+  {
+    id: 13, name: "ララァ", area: "中目黒", age: 22,
+    tags: ["写真", "ファッション", "キャラクター"],
+    stars: 5, likes: 158, views: 2010,
+    updatedMin: 35, updatedLabel: "本日 18:25 更新",
+    joinedDays: 1, mood: "🌙", streak: 1,
+    shop: "AIモデル見本（所属なし）",
+    height: "—", job: "インフルエンサー", work: "フリー",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "日記・投稿（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-10", title: "11/10 撮影の記録（外部ページ）", url: "#" },
+      { date: "2026-11-07", title: "11/7 聖域の番人のこと", url: "#" }
+    ],
+    photos: ["images/p13-a.jpg", "images/p13-b.jpg"]
   }
 ];
 
