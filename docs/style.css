@@ -96,22 +96,23 @@ nav.menu a.on { background: var(--accent); color: #fff; border-color: var(--acce
   position: absolute; top: 6px; right: 6px; background: var(--fresh); color: #fff;
   font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 999px;
 }
-.p-card .body { padding: 10px 12px 12px; }
+.p-card .body { display: block; padding: 10px 12px 12px; }
 .p-card .name { font-size: 16px; font-weight: 700; }
 .p-card .name .age { font-size: 12px; color: var(--sub); font-weight: 400; }
 .p-card .area { font-size: 12px; color: var(--accent); }
 .p-card .job { font-size: 11px; color: var(--sub); }
-.p-card .tags { margin-top: 4px; }
+.p-card .tags { display: block; margin-top: 4px; }
 .p-card .tags span {
   display: inline-block; font-size: 11px; background: var(--bg);
   border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; margin: 0 4px 4px 0;
 }
-.p-card .stars { margin-top: 4px; font-size: 12px; }
+.p-card .stars { display: block; margin-top: 4px; font-size: 12px; }
 .p-card .stars .stars-note { display: block; font-size: 10px; color: var(--sub); }
 .p-card .meta {
   display: flex; justify-content: space-between; font-size: 12px; color: var(--sub);
   margin-top: 6px; border-top: 1px dashed var(--line); padding-top: 6px;
 }
+.detail-link { display: block; margin-top: 8px; font-size: 12px; font-weight: 700; color: var(--accent); }
 .empty { text-align: center; color: var(--sub); padding: 30px 0; font-size: 14px; }
 
 /* 詳細 */
