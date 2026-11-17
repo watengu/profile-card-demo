@@ -255,6 +255,84 @@ const PEOPLE = [
       { date: "2026-11-07", title: "11/7 聖域の番人のこと", url: "#" }
     ],
     photos: ["images/p13-a.jpg", "images/p13-b.jpg"]
+  },
+  {
+    id: 14, sample: true, name: "ほのか", area: "横浜", age: 29,
+    tags: ["アロマ", "ゆったり"],
+    stars: 4, likes: 21, views: 386,
+    updatedMin: 320, updatedLabel: "本日 10:05 更新",
+    joinedDays: 9, mood: "🌿", streak: 2,
+    shop: "サロン・ルミエール横浜（架空）",
+    height: "161cm", job: "セラピスト", work: "フリー（店舗所属なし）",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "写メ日記（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-16", title: "11/16 アロマの香りの話（外部ページ）", url: "#" },
+      { date: "2026-11-14", title: "11/14 雨の日はゆったりと", url: "#" },
+      { date: "2026-11-11", title: "11/11 自己紹介を更新しました", url: "#" }
+    ],
+    photos: ["images/p14-a.jpg", "images/p14-b.jpg"]
+  },
+  {
+    id: 15, sample: true, name: "つむぎ", area: "吉祥寺", age: 26,
+    tags: ["ヘッドスパ", "リンパ"],
+    stars: 5, likes: 34, views: 512,
+    updatedMin: 95, updatedLabel: "本日 15:40 更新",
+    joinedDays: 16, mood: "☀️", streak: 3,
+    shop: "メゾンつむぎ吉祥寺（架空）",
+    height: "157cm", job: "セラピスト", work: "フリー（店舗所属なし）",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "写メ日記（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-17", title: "11/17 ヘッドスパのすすめ（外部ページ）", url: "#" },
+      { date: "2026-11-15", title: "11/15 週末のご案内", url: "#" },
+      { date: "2026-11-12", title: "11/12 吉祥寺のお店めぐり", url: "#" }
+    ],
+    photos: ["images/p15-a.jpg", "images/p15-b.jpg"]
+  },
+  {
+    id: 16, sample: true, name: "れい", area: "大宮", age: 31,
+    tags: ["整体", "ストレッチ"],
+    stars: 4, likes: 13, views: 208,
+    updatedMin: 1500, updatedLabel: "昨日 20:10 更新",
+    joinedDays: 4, mood: "🍵", streak: 1,
+    shop: "サロン・レイ大宮（架空）",
+    height: "166cm", job: "セラピスト", work: "フリー（店舗所属なし）",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "写メ日記（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-16", title: "11/16 ストレッチ講座の記録（外部ページ）", url: "#" },
+      { date: "2026-11-14", title: "11/14 肩のほぐし方", url: "#" }
+    ],
+    photos: ["images/p16-a.jpg", "images/p16-b.jpg"]
+  },
+  {
+    id: 17, sample: true, name: "しずく", area: "千葉", age: 24,
+    tags: ["フェイシャル", "アロマ"],
+    stars: 3, likes: 8, views: 121,
+    updatedMin: 45, updatedLabel: "本日 16:55 更新",
+    joinedDays: 2, mood: "✨", streak: 2,
+    shop: "サロン・しずく千葉（架空）",
+    height: "154cm", job: "セラピスト", work: "フリー（店舗所属なし）",
+    links: [
+      { type: "home", label: "公式プロフィール（外部）", url: "#" },
+      { type: "blog", label: "写メ日記（外部）", url: "#" },
+      { type: "sns", label: "SNS（外部）", url: "#" }
+    ],
+    diary: [
+      { date: "2026-11-17", title: "11/17 はじめまして（外部ページ）", url: "#" },
+      { date: "2026-11-16", title: "11/16 スキンケアの記録", url: "#" }
+    ],
+    photos: ["images/p17-a.jpg", "images/p17-b.jpg"]
   }
 ];
 

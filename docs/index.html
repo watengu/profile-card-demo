@@ -23,6 +23,21 @@
 .upd-list{list-style:none;margin:0;padding:0}
 .upd-list li{padding:9px 2px;border-bottom:1px solid #eee4d9;font-size:14px}
 .mood-line{font-size:20px;font-weight:700;margin:26px 0 6px}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mini-card{border:1px solid #e7ddd2;border-radius:14px;background:#fff;overflow:hidden}
+.mini-card .mc-photo{position:relative}
+.mini-card .mc-photo img{width:100%;height:150px;object-fit:cover;object-position:center 16%;display:block}
+.mini-card .mc-body{padding:8px 12px 12px;font-size:13px}
+.mini-card .mc-name{font-weight:700;font-size:15px}
+.mini-card .mc-meta{color:var(--sub);font-size:12px;margin-top:2px}
+.mini-card .mc-tags{margin-top:4px}
+.mini-card .mc-foot{margin-top:8px;font-size:12px;color:var(--sub)}
+.mini-card a.mc-link{color:var(--accent);font-weight:700;font-size:13px}
+.cap-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.cap-chip{border:1px solid var(--accent);color:var(--accent);border-radius:999px;padding:2px 10px;font-size:11px;font-weight:700}
+.upper-note{font-size:11px;color:var(--sub);margin-top:6px}
+.sample-notice{border:1px dashed #cbb79f;border-radius:12px;padding:10px 14px;font-size:13px;background:#fffaf3;margin:18px 0 4px}
+
 </style>
 <style>body{padding-bottom:78px}</style>
 </head>
@@ -61,49 +76,246 @@
   </div>
   <p class="lp-cta2"><a href="#sample">→ 実物のサンプルを見る</a></p>
 
+  <div class="sample-notice">このページに並ぶカードは、すべて架空のサンプルです。写真はAI生成画像です（実在の人物ではありません）。</div>
+
   <div class="lp-sec" id="sample">
-    <h2>実物のサンプル（架空のデモ）</h2>
-    <div class="sample-card">
-      <div class="sc-photo">
-        <img src="images/p7-a.jpg" alt="ななの写真（AI生成）" data-name="なな" data-color="#b0526b" onerror="imgFallback(this)">
-        <span class="ai-label" style="position:absolute;top:10px;left:10px">AI生成</span>
+    <h2>見本カード（架空のサンプル）</h2>
+    <div class="sample-grid">
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p2-a.jpg" alt="みゆの写真（AI生成）" data-name="みゆ" data-color="#7a9e7e" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">みゆ</span> <span style="color:var(--sub)">24歳</span>
+          <div class="mc-meta">セラピスト｜新宿</div>
+          <div class="mc-tags">リンパ／ヘッドスパ</div>
+          <div class="mc-meta">⭐⭐⭐⭐☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 86・あしあと 1,730</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/2.html">公開ページを見る →</a></p>
+        </div>
       </div>
-      <dl class="kv">
-        <dt>HN</dt><dd>なな</dd>
-        <dt>職種</dt><dd>ネイリスト</dd>
-        <dt>エリア</dt><dd>表参道</dd>
-        <dt>タグ</dt><dd>ジェル／手描きアート</dd>
-        <dt>おすすめ度</dt><dd>★★★★☆（本人の自己申告）</dd>
-        <dt>作品日記</dt><dd>外部ページへ →</dd>
-        <dt>SNS</dt><dd>Instagram／X（外部）→</dd>
-        <dt>店舗ページ</dt><dd>外部ページへ →</dd>
-      </dl>
-      <div class="foot-strip">
-        <span class="like-pill">♥ いいね 96</span>
-        <span style="font-size:13px;color:var(--sub)">あしあと 閲覧1,248・外部へ移動312（デモ数値）</span>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p3-a.jpg" alt="さくらの写真（AI生成）" data-name="さくら" data-color="#5b7fa6" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">さくら</span> <span style="color:var(--sub)">28歳</span>
+          <div class="mc-meta">セラピスト｜六本木</div>
+          <div class="mc-tags">整体／ストレッチ／指圧</div>
+          <div class="mc-meta">⭐⭐⭐⭐⭐（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 203・あしあと 3,120</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/3.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p6-a.jpg" alt="ゆきの写真（AI生成）" data-name="ゆき" data-color="#4a7a8c" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">ゆき</span> <span style="color:var(--sub)">25歳</span>
+          <div class="mc-meta">セラピスト｜恵比寿</div>
+          <div class="mc-tags">オイル／夜型／フェイシャル</div>
+          <div class="mc-meta">⭐⭐⭐⭐⭐（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 167・あしあと 2,210</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/6.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p14-a.jpg" alt="ほのかの写真（AI生成）" data-name="ほのか" data-color="#c08552" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">ほのか</span> <span style="color:var(--sub)">29歳</span>
+          <div class="mc-meta">セラピスト｜横浜</div>
+          <div class="mc-tags">アロマ／ゆったり</div>
+          <div class="mc-meta">⭐⭐⭐⭐☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 21・あしあと 386</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/14.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p15-a.jpg" alt="つむぎの写真（AI生成）" data-name="つむぎ" data-color="#5f8a6a" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">つむぎ</span> <span style="color:var(--sub)">26歳</span>
+          <div class="mc-meta">セラピスト｜吉祥寺</div>
+          <div class="mc-tags">ヘッドスパ／リンパ</div>
+          <div class="mc-meta">⭐⭐⭐⭐⭐（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 34・あしあと 512</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/15.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p16-a.jpg" alt="れいの写真（AI生成）" data-name="れい" data-color="#46586e" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">れい</span> <span style="color:var(--sub)">31歳</span>
+          <div class="mc-meta">セラピスト｜大宮</div>
+          <div class="mc-tags">整体／ストレッチ</div>
+          <div class="mc-meta">⭐⭐⭐⭐☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 13・あしあと 208</div>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/16.html">公開ページを見る →</a></p>
+        </div>
       </div>
     </div>
-    <p style="margin-top:10px;font-size:14px"><a href="card/7.html" style="color:var(--accent)">このカードの公開ページをそのまま見る →</a></p>
+    <p style="margin-top:10px;font-size:14px"><a href="cards.html" style="color:var(--accent)">カード一覧で全部見る →</a></p>
   </div>
 
-  <p class="mood-line">リンクを貼り回して、疲れていませんか。</p>
-  <p style="font-size:14px;color:var(--sub)">プロフィールに貼るURLは、もう1つでいい。</p>
-  <div class="cta-row">
-    <a class="primary" href="create.html">カードを作る（無料）</a>
-    <a href="cards.html">カード一覧を見る</a>
+  <div class="lp-sec" id="board-live">
+    <h2>掲示板では、こう載ります（実物の反映）</h2>
+    <p style="font-size:14px;color:var(--sub)">「おすすめURL掲示板」のリラクゼーション板に載る姿、そのままです。名前・写真・エリア・タグは掲示板と一致しています。押すと、このカードサイトの公開ページに飛びます。</p>
+    <main class="grid">
+    <div class="cell"><a class="p-card" href="card/1.html" data-id="1" data-job="セラピスト" data-joined="21" data-updated="40" data-hay="りお 銀座 アロマ オイル 深夜OK サロン・フィオーレ銀座（架空）">
+      <span class="ph"><img src="images/p1-a.jpg" alt="りおの写真（AI生成）" data-name="りお" data-color="#c96f4a" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">りお <span class="age">26歳</span></span><br>
+      <span class="area">銀座</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>アロマ</span><span>オイル</span><span>深夜OK</span></span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 128</span><span class="upd-time">更新：40分前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/2.html" data-id="2" data-job="セラピスト" data-joined="3" data-updated="130" data-hay="みゆ 新宿 リンパ ヘッドスパ メゾンロゼ新宿（架空）">
+      <span class="ph"><img src="images/p2-a.jpg" alt="みゆの写真（AI生成）" data-name="みゆ" data-color="#7a9e7e" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">みゆ <span class="age">24歳</span></span><br>
+      <span class="area">新宿</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>リンパ</span><span>ヘッドスパ</span></span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 86</span><span class="upd-time">更新：2時間前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/3.html" data-id="3" data-job="セラピスト" data-joined="45" data-updated="300" data-hay="さくら 六本木 整体 ストレッチ 指圧 サロン・セレッソ六本木（架空）">
+      <span class="ph"><img src="images/p3-a.jpg" alt="さくらの写真（AI生成）" data-name="さくら" data-color="#5b7fa6" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">さくら <span class="age">28歳</span></span><br>
+      <span class="area">六本木</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>整体</span><span>ストレッチ</span><span>指圧</span></span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 203</span><span class="upd-time">更新：5時間前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/4.html" data-id="4" data-job="セラピスト" data-joined="12" data-updated="1500" data-hay="あかり 池袋 アロマ ホットストーン メゾンクレール池袋（架空）">
+      <span class="ph"><img src="images/p4-a.jpg" alt="あかりの写真（AI生成）" data-name="あかり" data-color="#a65b8f" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">あかり <span class="age">23歳</span></span><br>
+      <span class="area">池袋</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>アロマ</span><span>ホットストーン</span></span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 57</span><span class="upd-time">更新：1日前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/5.html" data-id="5" data-job="セラピスト" data-joined="60" data-updated="2900" data-hay="かえで 渋谷 リフレクソロジー 読書好き ミルフィーユ渋谷（架空）">
+      <span class="ph"><img src="images/p5-a.jpg" alt="かえでの写真（AI生成）" data-name="かえで" data-color="#8f6a3d" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">かえで <span class="age">27歳</span></span><br>
+      <span class="area">渋谷</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>リフレクソロジー</span><span>読書好き</span></span>
+      <span class="stars">⭐⭐⭐☆☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 41</span><span class="upd-time">更新：2日前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/6.html" data-id="6" data-job="セラピスト" data-joined="7" data-updated="75" data-hay="ゆき 恵比寿 オイル 夜型 フェイシャル サロン・ルーチェ恵比寿（架空）">
+      <span class="ph"><img src="images/p6-a.jpg" alt="ゆきの写真（AI生成）" data-name="ゆき" data-color="#4a7a8c" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">ゆき <span class="age">25歳</span></span><br>
+      <span class="area">恵比寿</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>オイル</span><span>夜型</span><span>フェイシャル</span></span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 167</span><span class="upd-time">更新：1時間前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/14.html" data-id="14" data-job="セラピスト" data-joined="9" data-updated="320" data-hay="ほのか 横浜 アロマ ゆったり サロン・ルミエール横浜（架空）">
+      <span class="ph"><img src="images/p14-a.jpg" alt="ほのかの写真（AI生成）" data-name="ほのか" data-color="#c08552" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">ほのか <span class="age">29歳</span></span><br>
+      <span class="area">横浜</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>アロマ</span><span>ゆったり</span></span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 21</span><span class="upd-time">更新：5時間前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/15.html" data-id="15" data-job="セラピスト" data-joined="16" data-updated="95" data-hay="つむぎ 吉祥寺 ヘッドスパ リンパ メゾンつむぎ吉祥寺（架空）">
+      <span class="ph"><img src="images/p15-a.jpg" alt="つむぎの写真（AI生成）" data-name="つむぎ" data-color="#5f8a6a" onerror="imgFallback(this)"><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">つむぎ <span class="age">26歳</span></span><br>
+      <span class="area">吉祥寺</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>ヘッドスパ</span><span>リンパ</span></span>
+      <span class="stars">⭐⭐⭐⭐⭐<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 34</span><span class="upd-time">更新：1時間前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/16.html" data-id="16" data-job="セラピスト" data-joined="4" data-updated="1500" data-hay="れい 大宮 整体 ストレッチ サロン・レイ大宮（架空）">
+      <span class="ph"><img src="images/p16-a.jpg" alt="れいの写真（AI生成）" data-name="れい" data-color="#46586e" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">れい <span class="age">31歳</span></span><br>
+      <span class="area">大宮</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>整体</span><span>ストレッチ</span></span>
+      <span class="stars">⭐⭐⭐⭐☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 13</span><span class="upd-time">更新：1日前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    <div class="cell"><a class="p-card" href="card/17.html" data-id="17" data-job="セラピスト" data-joined="2" data-updated="45" data-hay="しずく 千葉 フェイシャル アロマ サロン・しずく千葉（架空）">
+      <span class="ph"><img src="images/p17-a.jpg" alt="しずくの写真（AI生成）" data-name="しずく" data-color="#7fb0b5" onerror="imgFallback(this)"><span class="new-badge">NEW</span><span class="ai-label">AI生成</span></span>
+      <span class="body">
+      <span class="name">しずく <span class="age">24歳</span></span><br>
+      <span class="area">千葉</span> <span class="job">職種：セラピスト</span>
+      <span class="tags"><span>フェイシャル</span><span>アロマ</span></span>
+      <span class="stars">⭐⭐⭐☆☆<span class="stars-note">本人のおすすめ度（掲載者自己申告）</span></span>
+      <span class="meta"><span>♥ 8</span><span class="upd-time">更新：45分前</span></span>
+      <span class="detail-link">プロフィールカードを見る（カードサイトへ）→</span>
+      </span></a></div>
+    </main>
+    <div class="cta-row">
+      <a href="https://watengu.github.io/promo-board-demo/board-relaxation.html">掲示板の実物を見る →</a>
+    </div>
+  </div>
+
+  <div class="lp-sec" id="upper">
+    <h2>上位プランの設計例（準備中）</h2>
+    <p style="font-size:14px;color:var(--sub)">通常のカードに、できることの印が付いた形です。ここにあるのは設計例で、会員ページなどの機能は準備中です。</p>
+    <div class="sample-grid">
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p4-a.jpg" alt="あかりの写真（AI生成）" data-name="あかり" data-color="#a65b8f" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">あかり</span> <span style="color:var(--sub)">23歳</span>
+          <div class="mc-meta">セラピスト｜池袋</div>
+          <div class="mc-tags">アロマ／ホットストーン</div>
+          <div class="mc-meta">⭐⭐⭐⭐☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 57・あしあと 980</div>
+          <div class="cap-chips"><span class="cap-chip">単品コンテンツ対応</span></div>
+          <p class="upper-note">上位プランの設計例・準備中</p>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/4.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p5-a.jpg" alt="かえでの写真（AI生成）" data-name="かえで" data-color="#8f6a3d" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">かえで</span> <span style="color:var(--sub)">27歳</span>
+          <div class="mc-meta">セラピスト｜渋谷</div>
+          <div class="mc-tags">リフレクソロジー／読書好き</div>
+          <div class="mc-meta">⭐⭐⭐☆☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 41・あしあと 760</div>
+          <div class="cap-chips"><span class="cap-chip">会員ページ対応</span></div>
+          <p class="upper-note">上位プランの設計例・準備中</p>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/5.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+      <div class="mini-card">
+        <div class="mc-photo"><img src="images/p17-a.jpg" alt="しずくの写真（AI生成）" data-name="しずく" data-color="#7fb0b5" onerror="imgFallback(this)"><span class="ai-label" style="position:absolute;top:8px;left:8px">AI生成</span></div>
+        <div class="mc-body">
+          <span class="mc-name">しずく</span> <span style="color:var(--sub)">24歳</span>
+          <div class="mc-meta">セラピスト｜千葉</div>
+          <div class="mc-tags">フェイシャル／アロマ</div>
+          <div class="mc-meta">⭐⭐⭐☆☆（本人のおすすめ度・自己申告）</div>
+          <div class="mc-foot">♥ 8・あしあと 121</div>
+          <div class="cap-chips"><span class="cap-chip">会員ページ対応</span><span class="cap-chip">単品コンテンツ対応</span></div>
+          <p class="upper-note">上位プランの設計例・準備中</p>
+          <p style="margin:8px 0 0"><a class="mc-link" href="card/17.html">公開ページを見る →</a></p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="lp-sec">
     <h2>最近の更新</h2>
     <ul class="upd-list">
+      <li>本日 16:55　しずく（千葉・セラピスト）が更新</li>
+      <li>本日 15:40　つむぎ（吉祥寺・セラピスト）が更新</li>
       <li>本日 14:50　りお（銀座・セラピスト）が更新</li>
       <li>本日 14:15　ゆき（恵比寿・セラピスト）が更新</li>
-      <li>本日 13:05　みゆ（新宿・セラピスト）が更新</li>
-      <li>本日 12:30　なな（表参道・ネイリスト）が更新</li>
     </ul>
   </div>
-
-  <div class="pr-slot">PR　広告枠の表示例です（ダミー）</div>
 
   <div class="lp-sec">
     <h2>登録・相談は、公式LINEで</h2>
@@ -120,22 +332,6 @@
       </ul>
       <span class="line-add-btn" id="line-add">友だち追加する</span>
       <p style="font-size:11px;color:var(--sub);margin-top:8px">※ LINE公式アカウントは開設準備中です。この入口はプレビュー表示で、開設後に有効になります。</p>
-    </div>
-  </div>
-
-  <div class="lp-sec" style="text-align:center">
-    <h2>あなたのURLも、1枚に。</h2>
-    <div class="cta-row" style="justify-content:center">
-      <a class="primary" href="create.html">カードを作る（無料）</a>
-    </div>
-    <p style="font-size:13px;color:var(--sub)">掲載はずっと無料。お金は広告から。掲載者からは取りません。</p>
-  </div>
-
-  <div class="lp-sec">
-    <h2>掲示板からは、こう見えます</h2>
-    <p>範囲内のカードのURLは「おすすめURL掲示板」に、カードの見た目のまま表示されます。押すと、このカードサイトの公開プロフィールページに飛びます。掲示板の側はプロフィール情報を持たず、URLだけを置く別のサイトです。</p>
-    <div class="cta-row">
-      <a href="https://watengu.github.io/promo-board-demo/">おすすめURL掲示板を見る →</a>
     </div>
   </div>
 
